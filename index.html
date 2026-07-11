@@ -140,18 +140,51 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 .bio-card h3{margin:0 0 8px;font-size:22px;font-weight:900}
 .bio-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.85}
 
-/* 報名 Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(36,31,26,.6);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:16px}
-.modal-overlay.active{display:flex}
-.modal-box{background:#fffdf9;border-radius:28px;max-width:460px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.32);overflow:hidden}
-.modal-head{background:#241f1a;color:#fff;padding:26px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.modal-head h3{margin:0;font-size:22px;font-weight:900}
-.modal-head p{margin:6px 0 0;font-size:13px;color:#d8c6b1}
-.modal-close{background:none;border:none;color:#fff;font-size:28px;line-height:1;cursor:pointer;opacity:.8;padding:0}
-.modal-body{padding:26px 28px 30px}
-.modal-body label{display:block;font-weight:900;font-size:14px;margin:0 0 6px;color:var(--text)}
-.modal-body input{width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);margin-bottom:16px;font-size:16px;font-family:inherit}
-.modal-submit{width:100%;padding:16px;border-radius:999px;border:none;background:var(--accent);color:#fff;font-weight:900;font-size:17px;cursor:pointer}
+/* 報名 Modal（比照 bigtree/old 完整流程：表單→送出→成功頁→使用者主動點擊才開LINE，避免瀏覽器擋彈窗） */
+.modal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.show{display:flex}
+.modal-bg{position:absolute;inset:0;background:rgba(36,31,26,.65);backdrop-filter:blur(8px)}
+.modal-box{position:relative;background:#fffdf9;border-radius:24px;width:100%;max-width:460px;overflow:hidden;box-shadow:0 28px 60px -20px rgba(0,0,0,.45);animation:modalIn .25s ease;max-height:92vh;overflow-y:auto}
+@keyframes modalIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.modal-head{background:#241f1a;color:#fff;padding:20px 24px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modal-title{font-weight:900;font-size:20px}
+.modal-sub{font-size:13px;color:#d8c6b1;margin-top:4px}
+.modal-close{background:transparent;border:0;color:rgba(255,255,255,.75);font-size:30px;line-height:1;cursor:pointer;padding:0;flex-shrink:0}
+.modal-close:hover{color:#fff}
+.modal-body{padding:22px 24px 26px}
+.field{display:block;margin-bottom:13px}
+.field label{display:block;font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--muted);margin-bottom:6px}
+.field input{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:15px;font-family:inherit;outline:none;transition:.2s;background:#fffdf9;box-sizing:border-box}
+.field input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(155,91,63,.18);background:#fff}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field-check{display:flex;gap:10px;align-items:flex-start;margin-top:10px;font-size:13.5px;color:var(--muted);line-height:1.55}
+.field-check input{width:16px;height:16px;margin-top:3px;accent-color:var(--accent);flex-shrink:0}
+.modal-actions{display:flex;gap:10px;margin-top:22px}
+.btn-ghost{flex:1;height:48px;border:1px solid var(--line);background:#fff;color:var(--text);font-weight:700;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;font-family:inherit}
+.btn-ghost:hover{background:#f8f1e7}
+.btn-submit{flex:1;height:48px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;font-weight:900;border:0;border-radius:999px;font-size:15px;cursor:pointer;transition:.2s;box-shadow:0 10px 24px -10px rgba(155,91,63,.55);font-family:inherit}
+.btn-submit:hover{transform:translateY(-1px)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.success-box{padding:32px 24px;text-align:center}
+.success-icon{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#9ee9d3,#06C755);margin:0 auto 18px;display:grid;place-items:center;color:#fff;font-size:36px}
+.success-box h3{font-size:24px;font-weight:900;color:var(--text);margin:0 0 8px}
+.success-box>p{color:var(--muted);font-size:14.5px;margin:0 0 22px;line-height:1.7}
+.success-line-banner{background:#e6f8ee;border:1px solid #b9d6c8;border-radius:14px;padding:18px;margin-bottom:18px;text-align:left}
+.banner-head{font-weight:900;color:#06C755;display:flex;align-items:center;gap:8px;font-size:15px;margin-bottom:12px}
+.btn-line-confirm{width:100%;height:50px;background:#06C755;color:#fff;font-weight:900;border:0;border-radius:12px;font-size:15px;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:inherit}
+.btn-line-confirm:hover{background:#04a847}
+.btn-copy-msg{display:flex;align-items:center;justify-content:center;gap:5px;margin:10px auto 0;background:transparent;border:0;color:#06C755;font-size:13.5px;cursor:pointer;font-weight:700;font-family:inherit}
+.btn-copy-msg:hover{text-decoration:underline}
+.btn-close-modal{width:100%;height:42px;background:transparent;border:0;color:var(--muted);font-size:14.5px;cursor:pointer;font-weight:500;font-family:inherit}
+.btn-close-modal:hover{color:var(--text)}
+.type-choice-list{display:grid;gap:12px}
+.type-choice{display:flex;align-items:center;gap:16px;padding:18px;border-radius:16px;border:1px solid var(--line);background:#fffdf9;cursor:pointer;text-align:left;transition:.2s;font-family:inherit}
+.type-choice:hover{border-color:var(--accent);background:#fff;transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(155,91,63,.3)}
+.type-choice-icon{font-size:30px;flex-shrink:0}
+.type-choice-text{display:flex;flex-direction:column;gap:3px}
+.type-choice-text strong{font-size:17px;color:var(--text)}
+.type-choice-text small{font-size:13px;color:var(--muted)}
+@media(max-width:640px){.field-row{grid-template-columns:1fr}}
 
 @media(max-width:980px){.hero-grid,.cards,.route-grid,.sponsor-grid,.footer-cta,.proof-grid,.meta-grid,.fit-grid,.price-wrap,.link-grid,.agenda-grid,.speaker-grid{grid-template-columns:1fr}.featured{transform:none}.route-head{flex-direction:column}.hero{padding:64px 0 68px}.section{padding:72px 0}.signup{padding:78px 0}.sticky a,.sticky button{min-width:unset;flex:1}.speaker-card{grid-template-columns:1fr}.speaker-photo{width:96px}}
 @media(max-width:640px){.container{width:min(var(--max),calc(100% - 20px))}.btn{width:100%}.btn-row{flex-direction:column}.sticky{gap:8px;padding:10px}.sticky a,.sticky button{padding:14px 16px;font-size:17px}.qr-real{width:190px;height:190px}.qr-real img{width:150px;height:150px}.eyebrow{font-size:14px}.section{padding:78px 0}.headline{font-size:48px;line-height:1.02}.subheadline{font-size:28px;line-height:1.25}.lead{font-size:22px;line-height:1.8}.chip{font-size:15px;padding:12px 18px}.section-lead{font-size:22px;line-height:1.8}.flow-sub{font-size:14px}.flow-title{font-size:32px}.flow-text,.route-card p,.route-note,.checklist,.sponsor-card ul,.small-note,.hero-box p,.proof-card p,.fit-card p{font-size:20px;line-height:1.9}.route-note,.link-card,.proof-card,.fit-card,.meta-card,.card,.sponsor-card,.price-box,.route-card,.hero-box,.signup-card,.agenda-card,.speaker-card,.bio-card{padding:24px}.sponsor-card h3,strong{font-size:30px}.sponsor-card .plan-tag,.muted-2,.tiny-proof{font-size:15px}.price{font-size:62px}.link-value{font-size:20px}.time-box{min-width:78px;padding:12px 14px}.time-box strong{font-size:26px}.time-box span{font-size:14px}.entry-icon{width:210px;height:210px}.entry-icon span{font-size:28px}.entry-emoji{font-size:78px}.entry-emoji .accent-mark,.entry-emoji.team .accent-mark{font-size:48px}.meta-card strong{font-size:32px}.btn{font-size:20px}.count-live{font-size:20px}h2{font-size:38px;line-height:1.18}}
@@ -183,7 +216,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
       <div class="small-note">越接近活動日，名額越快滿。現在先卡位，最安心。</div>
 
       <div class="btn-row">
-        <button class="btn btn-primary" onclick="showRegisterModal()">立即報名</button>
+        <button class="btn btn-primary" onclick="showTypeModal()">立即報名</button>
         <a class="btn btn-secondary" href="#agenda">先看活動內容</a>
       </div>
 
@@ -366,7 +399,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
         <div>✔ 報名加碼贈送贊助廠商伴手禮（洽談中）</div>
       </div>
       <div class="btn-row" style="margin-top:24px">
-        <button class="btn btn-primary" style="width:100%" onclick="showRegisterModal()">手刀搶免費名額</button>
+        <button class="btn btn-primary" style="width:100%" onclick="showTypeModal()">手刀搶免費名額</button>
       </div>
     </div>
   </div>
@@ -380,7 +413,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 
     <div class="route-grid">
 
-      <div class="route-card" onclick="showRegisterModal()">
+      <div class="route-card" onclick="showTypeModal()">
         <div class="route-head">
           <div>
             <strong style="font-size:24px">個人報名</strong>
@@ -394,7 +427,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
         </div>
       </div>
 
-      <div class="route-card" onclick="showRegisterModal()">
+      <div class="route-card" onclick="showTypeModal()">
         <div class="route-head">
           <div>
             <strong style="font-size:24px">企業合作</strong>
@@ -468,14 +501,14 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
             </div>
           </div>
           <div class="btn-row">
-            <button class="btn btn-primary" onclick="showRegisterModal()">點我立即報名</button>
-            <a class="btn btn-secondary" href="https://lin.ee/o5pODV8" target="_blank" rel="noopener noreferrer">直接加入 LINE</a>
+            <button class="btn btn-primary" onclick="showTypeModal()">點我立即報名</button>
+            <a class="btn btn-secondary" href="https://line.me/R/ti/p/@qaw8118h" target="_blank" rel="noopener noreferrer">直接加入 LINE</a>
           </div>
         </div>
 
         <aside class="qr-panel">
           <div class="qr-real">
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Flin.ee%2Fo5pODV8" alt="LINE 報名 QR Code">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fline.me%2FR%2Fti%2Fp%2F%40qaw8118h" alt="LINE 報名 QR Code">
           </div>
           <div style="margin-top:18px;font-size:22px;font-weight:900">掃碼加入 LINE</div>
           <div style="margin-top:8px;font-size:14px;line-height:1.8;color:#6c6157">掃描後直接加入 LINE，或點擊上方「立即報名」直接送出資料。</div>
@@ -491,29 +524,101 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 </footer>
 
 <div class="sticky">
-  <button class="primary" onclick="showRegisterModal()">立即報名</button>
-  <a href="https://lin.ee/o5pODV8" target="_blank" rel="noopener noreferrer">加入 LINE</a>
+  <button class="primary" onclick="showTypeModal()">立即報名</button>
+  <a href="https://line.me/R/ti/p/@qaw8118h" target="_blank" rel="noopener noreferrer">加入 LINE</a>
 </div>
 
-<!-- ===== Registration Modal ===== -->
-<div class="modal-overlay" id="registerModal">
+<!-- ===== Type Select Modal ===== -->
+<div class="modal" id="typeModal">
+  <div class="modal-bg" onclick="hideTypeModal()"></div>
   <div class="modal-box">
     <div class="modal-head">
       <div>
-        <h3>報名 AI 微型論壇</h3>
-        <p>AI微型論壇－台南場｜7/29（三）14:00–17:00｜安平維悅酒店</p>
+        <div class="modal-title">報名 AI 微型論壇</div>
+        <div class="modal-sub">請選擇您的報名身份</div>
+      </div>
+      <button class="modal-close" onclick="hideTypeModal()" aria-label="關閉">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="type-choice-list">
+        <button type="button" class="type-choice" onclick="selectRegType('個人')">
+          <span class="type-choice-icon">👤</span>
+          <span class="type-choice-text"><strong>個人報名</strong><small>想學會 AI 並提升效率的個人</small></span>
+        </button>
+        <button type="button" class="type-choice" onclick="selectRegType('企業')">
+          <span class="type-choice-icon">🏢</span>
+          <span class="type-choice-text"><strong>企業報名</strong><small>企業品牌曝光或團隊參與</small></span>
+        </button>
+        <button type="button" class="type-choice" onclick="selectRegType('設攤')">
+          <span class="type-choice-icon">🛍️</span>
+          <span class="type-choice-text"><strong>現場設攤</strong><small>想在活動現場擺攤曝光的夥伴</small></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Registration Modal ===== -->
+<div class="modal" id="registerModal">
+  <div class="modal-bg" onclick="hideRegisterModal()"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="registerModalTitle">報名 AI 微型論壇</div>
+        <div class="modal-sub">AI微型論壇－台南場｜7/29（三）14:00–17:00｜安平維悅酒店</div>
       </div>
       <button class="modal-close" onclick="hideRegisterModal()" aria-label="關閉">&times;</button>
     </div>
     <div class="modal-body">
       <form id="registerForm" onsubmit="submitRegistration(event)">
-        <label for="regName">姓名</label>
-        <input type="text" id="regName" required placeholder="請輸入姓名">
-        <label for="regPhone">聯絡電話</label>
-        <input type="tel" id="regPhone" required placeholder="0912-345-678">
-        <button type="submit" class="modal-submit">送出並前往 LINE 完成報名</button>
+        <div class="field">
+          <label>姓 　 名</label>
+          <input type="text" id="regName" required placeholder="請輸入姓名">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>聯 絡 電 話</label>
+            <input type="tel" id="regPhone" required placeholder="0912-345-678">
+          </div>
+          <div class="field">
+            <label>電 子 郵 件</label>
+            <input type="email" id="regEmail" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="field">
+          <label>公 司 / 職 稱（選填）</label>
+          <input type="text" id="regCompany" placeholder="例：○○顧問公司 總經理">
+        </div>
+        <div class="field-check">
+          <input type="checkbox" id="regAgree" required>
+          <label for="regAgree">我了解本活動免費入場，並同意主辦單位以電話 / LINE 與我聯繫確認席次。</label>
+        </div>
+        <div class="modal-actions">
+          <button type="button" onclick="hideRegisterModal()" class="btn-ghost">取消</button>
+          <button type="submit" class="btn-submit">確認送出報名</button>
+        </div>
       </form>
     </div>
+  </div>
+</div>
+
+<!-- ===== Success Modal ===== -->
+<div class="modal" id="successModal">
+  <div class="modal-bg" onclick="hideSuccessModal()"></div>
+  <div class="modal-box success-box">
+    <div class="success-icon"><i class="fa-solid fa-circle-check"></i>✓</div>
+    <h3>報名成功！</h3>
+    <p>您的報名資料已送出，<br>我們將盡速與您確認席次。</p>
+    <div class="success-line-banner">
+      <div class="banner-head">加入官方 LINE 完成報名</div>
+      <button onclick="sendToLine()" class="btn-line-confirm">
+        <span>點擊加入 LINE 並傳送報名資料</span>
+      </button>
+      <button onclick="copyLineMessage()" class="btn-copy-msg">
+        <span>或複製訊息手動傳送</span>
+      </button>
+    </div>
+    <button onclick="hideSuccessModal()" class="btn-close-modal">關閉視窗</button>
   </div>
 </div>
 
@@ -578,28 +683,112 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   setInterval(updateLiveCount, 60000);  // 每分鐘檢查一次人數變化
 })();
 
-function showRegisterModal(){
-  document.getElementById('registerModal').classList.add('active');
+// ===== 報名流程（完整比照 bigtree/old：表單送出→後端存檔→成功頁→使用者主動點擊才開LINE） =====
+const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
+const SESSION_NAME = 'AI微型論壇－台南場（7/29 安平維悅酒店）';
+
+// 三種報名身份對照：畫面顯示文字 + LINE通知/訊息開頭標籤
+const TYPE_LABELS = {
+  '個人': { title: '個人報名', notice: '新報名通知' },
+  '企業': { title: '企業報名', notice: '企業報名通知' },
+  '設攤': { title: '現場設攤', notice: '設攤通知' }
+};
+let currentRegType = '個人';
+
+function showTypeModal(){
+  document.getElementById('typeModal').classList.add('show');
 }
-function hideRegisterModal(){
-  document.getElementById('registerModal').classList.remove('active');
+function hideTypeModal(){
+  document.getElementById('typeModal').classList.remove('show');
+}
+function selectRegType(type){
+  currentRegType = type;
+  hideTypeModal();
+  showRegisterModal();
+}
+
+function showRegisterModal(){
+  const info = TYPE_LABELS[currentRegType] || TYPE_LABELS['個人'];
+  document.getElementById('registerModalTitle').textContent = '報名 AI 微型論壇 · ' + info.title;
+  const m = document.getElementById('registerModal');
+  m.classList.add('show');
   document.getElementById('registerForm').reset();
 }
+function hideRegisterModal(){
+  document.getElementById('registerModal').classList.remove('show');
+}
+function showSuccessModal(){
+  document.getElementById('successModal').classList.add('show');
+}
+function hideSuccessModal(){
+  document.getElementById('successModal').classList.remove('show');
+}
 
-// 小龍蝦專線 LINE（比照「大樹小講」頁面：送出即直接帶到 LINE，不需再進官方選單按 1234）
-const LINE_URL = 'https://lin.ee/o5pODV8';
-
+let lastRegistration = null;
 function submitRegistration(e){
   e.preventDefault();
   const name = document.getElementById('regName').value.trim();
   const phone = document.getElementById('regPhone').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const company = document.getElementById('regCompany').value.trim();
   if(!name || !phone){ alert('請完整填寫姓名與聯絡電話'); return; }
-  const msg = `您好，我想報名【AI微型論壇－台南場】\n日期：2026/7/29（三）14:00–17:00\n地點：台南安平維悅酒店\n姓名：${name}\n電話：${phone}\n請協助確認席次，謝謝！`;
-  navigator.clipboard.writeText(msg).catch(() => {});
-  hideRegisterModal();
-  window.open(LINE_URL, '_blank');
-  setTimeout(() => alert('報名訊息已複製，請在 LINE 對話框貼上送出，完成報名！'), 300);
+  const info = TYPE_LABELS[currentRegType] || TYPE_LABELS['個人'];
+  lastRegistration = { name, phone, email, company, type: currentRegType };
+  fetch('https://sme-register-fn.netlify.app/.netlify/functions/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    // session 欄位加上【XX通知】前綴：若後端把session原樣顯示在通知裡，這裡就能反映身份差異
+    body: JSON.stringify({ session: '【' + info.notice + '】' + SESSION_NAME, name, company, phone, email, type: currentRegType })
+  }).catch(()=>{});
+  const form = e.target;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const origText = submitBtn.innerHTML;
+  submitBtn.disabled = true;
+  submitBtn.innerHTML = '處理中...';
+  setTimeout(() => {
+    hideRegisterModal();
+    showSuccessModal();
+    submitBtn.disabled = false;
+    submitBtn.innerHTML = origText;
+    form.reset();
+  }, 800);
 }
+
+function generateLineMessage(){
+  if(!lastRegistration) return '您好，我想報名【AI微型論壇－台南場】，請協助確認席次，謝謝！';
+  const r = lastRegistration;
+  const info = TYPE_LABELS[r.type] || TYPE_LABELS['個人'];
+  return '【' + info.notice + '】\n您好，我想' + info.title + '【AI微型論壇－台南場】\n\n姓名：' + r.name + '\n電話：' + r.phone + '\nEmail：' + (r.email || '未填寫') + '\n公司/職稱：' + (r.company || '未填寫') + '\n\n請協助確認席次，謝謝！';
+}
+function copyLineMessage(){
+  const msg = generateLineMessage();
+  navigator.clipboard.writeText(msg).then(() => {
+    alert('已複製報名訊息，請貼到 LINE 對話框送出。');
+  }).catch(() => prompt('請複製以下訊息傳送給大樹教育 LINE：', msg));
+}
+function sendToLine(){
+  window.open(LINE_REGISTRATION_URL, '_blank');
+}
+
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape'){
+    const sm = document.getElementById('successModal');
+    const rm = document.getElementById('registerModal');
+    const tm = document.getElementById('typeModal');
+    if(sm.classList.contains('show')) hideSuccessModal();
+    else if(rm.classList.contains('show')) hideRegisterModal();
+    else if(tm.classList.contains('show')) hideTypeModal();
+  }
+});
+
+// URL hash 直達報名：?register / #register / #報名 都觸發
+window.addEventListener('load', () => {
+  const h = location.hash.toLowerCase();
+  const s = location.search.toLowerCase();
+  if(h === '#register' || h === '#報名' || s.includes('register')){
+    showTypeModal();
+  }
+});
 </script>
 </body>
 </html>
