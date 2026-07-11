@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI微型論壇 台南場｜7月29日 安平維悅酒店</title>
+<meta name="description" content="AI微型論壇－台南場。2026年7月29日14:00–17:00，安平維悅酒店。從最落地的AI應用開始，效率直接翻倍。限量100席，免費入場，報名加碼贈送贊助廠商伴手禮。" />
+<style>
+:root{
+--bg:#f6f1e8;
+--bg-soft:#fffdf9;
+--paper:rgba(255,255,255,.84);
+--text:#241f1a;
+--muted:#5b5148;
+--muted-2:#7d6d5c;
+--line:#dfcfbb;
+--accent:#9b5b3f;
+--accent-2:#c8845b;
+--gold:#b9956b;
+--olive:#2f3a35;
+--olive-2:#435248;
+--max:1180px;
+--shadow:0 20px 60px rgba(89,67,46,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+.section{padding:88px 0}
+.eyebrow{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:900;color:#8a6844}
+.hero{position:relative;overflow:hidden;padding:82px 0 88px;background:
+radial-gradient(circle at 15% 20%, rgba(255,255,255,.52), transparent 20%),
+radial-gradient(circle at 80% 12%, rgba(200,132,91,.18), transparent 22%),
+radial-gradient(circle at 68% 78%, rgba(67,82,72,.14), transparent 26%),
+linear-gradient(135deg,#f7f1e7 0%,#efe3cf 42%,#ead7bb 100%)}
+.hero-grid,.cards,.route-grid,.sponsor-grid,.footer-cta,.proof-grid,.meta-grid,.fit-grid,.agenda-grid,.speaker-grid{display:grid;gap:24px}
+.hero-grid{grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+.meta-grid{grid-template-columns:repeat(3,1fr);margin-top:34px}
+.cards{grid-template-columns:repeat(3,1fr);margin-top:30px}
+.fit-grid{grid-template-columns:repeat(4,1fr);margin-top:26px}
+.proof-grid{grid-template-columns:1.05fr .95fr;align-items:start;margin-top:28px}
+.route-grid{grid-template-columns:repeat(2,1fr);margin-top:30px}
+.sponsor-grid{grid-template-columns:repeat(3,1fr);margin-top:30px}
+.footer-cta{grid-template-columns:1fr 320px;align-items:center;gap:32px}
+.chip{display:inline-flex;align-items:center;padding:10px 18px;border-radius:999px;border:1px solid var(--gold);background:rgba(255,255,255,.72);font-weight:800;color:#6b5134;box-shadow:0 4px 20px rgba(0,0,0,.03);backdrop-filter:blur(8px)}
+.location-badge{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:14px;font-weight:900;color:var(--accent);letter-spacing:.04em}
+.headline{font-size:clamp(42px,6vw,74px);line-height:.96;font-weight:900;margin:6px 0 10px;letter-spacing:-.03em}
+.subheadline{font-size:clamp(23px,3vw,34px);color:var(--accent);font-weight:900}
+.lead{font-size:clamp(18px,2vw,21px);color:#4e463f;margin-top:20px;max-width:760px}
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:16px 28px;border-radius:999px;font-weight:900;transition:.22s ease;border:none;cursor:pointer;font-size:16px;font-family:inherit}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:#241f1a;color:#fff;box-shadow:0 14px 34px rgba(36,31,26,.14)}
+.btn-secondary{border:1px solid var(--gold);background:rgba(255,255,255,.75);color:#6b5134}
+.hero-box,.card,.price-box,.route-card,.signup-card,.qr-panel,.proof-card,.fit-card,.agenda-card,.speaker-card{background:var(--paper);border:1px solid #e4d4bf;border-radius:30px;box-shadow:var(--shadow)}
+.hero-box{padding:30px;background:rgba(255,255,255,.86)}
+.badge{display:inline-block;background:var(--accent);color:#fff;padding:6px 12px;border-radius:999px;font-weight:900;font-size:13px}
+.hero-box h3{margin:14px 0 8px;font-size:clamp(32px,4vw,48px);line-height:1.1}
+.hero-box p{margin:0;color:var(--muted);font-size:18px}
+.countdown{display:flex;flex-wrap:wrap;align-items:center;gap:12px;background:#fff3e5;border:1px solid #e8cfa8;padding:14px 20px;border-radius:18px;margin-top:22px;font-weight:900;box-shadow:0 8px 20px rgba(167,123,60,.08)}
+.count-live{display:inline-flex;align-items:center;gap:10px}
+.count-timer{display:inline-flex;flex-wrap:wrap;gap:10px}
+.time-box{min-width:72px;padding:10px 12px;border-radius:14px;background:#fff;border:1px solid #ecd7b7;text-align:center;box-shadow:0 6px 16px rgba(167,123,60,.06)}
+.time-box strong{display:block;font-size:22px;line-height:1.1;color:#7a4c2b}
+.time-box span{display:block;margin-top:4px;font-size:12px;color:#8b7257;font-weight:800;letter-spacing:.08em}
+.count-dot{width:10px;height:10px;border-radius:999px;background:#c44d2b;box-shadow:0 0 0 8px rgba(196,77,43,.12)}
+.meta-card,.fit-card{padding:20px}
+.meta-card strong{display:block;margin-top:6px;font-size:28px;line-height:1.2}
+h2{font-size:clamp(32px,4vw,52px);margin:0 0 14px;font-weight:900;line-height:1.12;letter-spacing:-.02em}
+.section-lead{font-size:19px;color:var(--muted);max-width:860px}
+.card{padding:26px;transition:.22s ease}
+.card:hover{transform:translateY(-4px)}
+.num{width:48px;height:48px;border-radius:999px;display:grid;place-items:center;background:#f1e2cf;color:#8a6844;font-weight:900}
+.flow-sub{margin-top:18px;font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;color:#8a6844}
+.flow-title{margin-top:8px;font-size:28px;font-weight:900;line-height:1.15}
+.flow-text{margin-top:12px;color:var(--muted)}
+.highlight{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;padding:80px 0;text-align:center}
+.highlight .eyebrow{color:#f8dfc6}.highlight h2{color:#fff}.highlight p{max-width:860px;margin:18px auto 0;color:#faeee7;font-size:20px}
+.price-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start}
+.price-box{padding:30px;background:linear-gradient(180deg,#fffaf2 0%,#f3e7d5 100%)}
+.price{font-size:clamp(52px,7vw,78px);font-weight:900;line-height:1;margin:10px 0 4px}
+.checklist{display:grid;gap:8px;color:#4e463f;margin-top:16px}
+.route{background:#fffdf9;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.route-card{padding:32px;background:#fff;transition:.25s ease;cursor:pointer}
+.route-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(0,0,0,.12)}
+.entry-icon{width:200px;height:200px;border-radius:44px;background:linear-gradient(135deg,#ffffff,#f3e7d5);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;border:1px solid #e2d2bd;box-shadow:0 14px 30px rgba(0,0,0,.08);transition:.25s;position:relative;overflow:hidden}
+.entry-icon::after{content:"";position:absolute;inset:auto -28px -34px auto;width:110px;height:110px;border-radius:999px;background:rgba(200,132,91,.10);filter:blur(2px)}
+.entry-emoji{display:flex;align-items:center;justify-content:center;gap:12px;font-size:70px;line-height:1}
+.entry-emoji .accent-mark{font-size:44px;transform:translateY(-8px)}
+.entry-emoji.team .accent-mark{font-size:42px;transform:none}
+.route-card:hover .entry-icon{transform:scale(1.05)}
+.entry-icon span{font-size:24px;margin-top:10px;font-weight:900;color:#5b5148;letter-spacing:.06em}
+.route-note{margin-top:14px;padding:14px 16px;border-radius:18px;background:#f8f1e7;color:#6b5d50;font-size:14px}
+.route-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
+.qr-box{width:104px;height:104px;display:grid;place-items:center;text-align:center;border-radius:24px;border:1px solid #d8c6b1;background:linear-gradient(135deg,#fff 0%,#f4eadc 100%);font-size:12px;font-weight:800;color:#7a6857}
+.sponsor{background:linear-gradient(180deg,var(--olive) 0%,var(--olive-2) 100%);color:#fff;padding:96px 0}
+.sponsor .eyebrow{color:#d8c6b1}.sponsor .section-lead{color:#e8ddd0}
+.sponsor-card{background:rgba(255,255,255,.06);padding:30px;border-radius:28px;border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px)}
+.sponsor-card h3{margin:0;color:#f5e7d8;font-size:24px}
+.sponsor-card .plan-tag{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.10);font-size:12px;font-weight:900;color:#dfc4aa}
+.sponsor-card ul{margin:14px 0 0;padding-left:20px;color:#f6efe8}.sponsor-card li+li{margin-top:8px}
+.sponsor-note{max-width:720px;margin:34px auto 0;text-align:center;color:#e8ddd0;font-size:15px;line-height:1.9}
+.signup{padding:92px 0}
+.signup-card{padding:40px;background:linear-gradient(135deg,#f8f1e7,#efe0c8)}
+.link-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:28px}
+.link-card{border-radius:22px;border:1px solid #ddcdb8;background:rgba(255,255,255,.75);padding:18px}
+.link-value{margin-top:8px;word-break:break-all;font-weight:800}
+.qr-panel{padding:24px;text-align:center;background:rgba(255,255,255,.88)}
+.qr-real{width:224px;height:224px;margin:0 auto;border-radius:26px;background:linear-gradient(135deg,#ffffff 0%,#f4eadc 100%);border:1px solid #d8c6b1;display:grid;place-items:center;overflow:hidden}
+.qr-real img{width:180px;height:180px}
+.tiny-proof{margin-top:16px;font-size:12px;line-height:1.75;color:#8a7a6a}
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(36,31,26,.94);backdrop-filter:blur(10px);padding:12px 16px;display:flex;justify-content:center;gap:12px;z-index:999;border-top:1px solid rgba(255,255,255,.08)}
+.sticky a,.sticky button{background:#fff;padding:14px 22px;border-radius:999px;font-weight:900;color:#241f1a;min-width:150px;text-align:center;border:none;cursor:pointer;font-size:16px;font-family:inherit}
+.sticky a.primary,.sticky button.primary{background:#f6d2b4}
+.small-note{font-size:14px;color:var(--muted-2);margin-top:10px}
+footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
+
+/* 議程 Agenda */
+.agenda-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:30px}
+.agenda-card{padding:26px}
+.agenda-card:hover{transform:translateY(-4px)}
+.agenda-speaker{display:inline-block;margin-top:16px;padding:6px 14px;border-radius:999px;background:#f1e2cf;color:#6b5134;font-weight:900;font-size:14px}
+.agenda-speaker.tbd{background:#efe6d8;color:#8a7a6a}
+
+/* 講師陣容 Speakers */
+.speaker-grid{grid-template-columns:repeat(2,1fr);margin-top:30px}
+.speaker-card{padding:22px;display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:start}
+.speaker-card:hover{transform:translateY(-4px)}
+.speaker-photo{width:132px;aspect-ratio:1 / 1.2;border-radius:18px;background:linear-gradient(135deg,#f1e2cf,#e4d4bf);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;color:#8a6844;overflow:hidden;border:1px solid #e4d4bf}
+.speaker-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.speaker-name{font-size:22px;font-weight:900;color:var(--text)}
+.speaker-title{margin-top:2px;font-size:14px;font-weight:800;color:var(--accent)}
+.speaker-topic{margin-top:10px;padding:10px 14px;border-radius:14px;background:#f8f1e7;color:var(--muted);font-weight:800;font-size:14px;line-height:1.6}
+.speaker-actions{margin-top:12px}
+.btn-mini{display:inline-flex;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:900;font-size:13px}
+.bio-card{scroll-margin-top:100px;padding:26px}
+.bio-tag{display:inline-block;margin-bottom:10px;padding:5px 12px;border-radius:999px;background:#f1e2cf;color:#6b5134;font-weight:900;font-size:13px}
+.bio-card h3{margin:0 0 8px;font-size:22px;font-weight:900}
+.bio-card p{margin:0;color:var(--muted);font-size:15px;line-height:1.85}
+
+/* 報名 Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(36,31,26,.6);backdrop-filter:blur(4px);z-index:1000;align-items:center;justify-content:center;padding:16px}
+.modal-overlay.active{display:flex}
+.modal-box{background:#fffdf9;border-radius:28px;max-width:460px;width:100%;box-shadow:0 30px 80px rgba(0,0,0,.32);overflow:hidden}
+.modal-head{background:#241f1a;color:#fff;padding:26px 28px;display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.modal-head h3{margin:0;font-size:22px;font-weight:900}
+.modal-head p{margin:6px 0 0;font-size:13px;color:#d8c6b1}
+.modal-close{background:none;border:none;color:#fff;font-size:28px;line-height:1;cursor:pointer;opacity:.8;padding:0}
+.modal-body{padding:26px 28px 30px}
+.modal-body label{display:block;font-weight:900;font-size:14px;margin:0 0 6px;color:var(--text)}
+.modal-body input{width:100%;padding:14px 16px;border-radius:16px;border:1px solid var(--line);margin-bottom:16px;font-size:16px;font-family:inherit}
+.modal-submit{width:100%;padding:16px;border-radius:999px;border:none;background:var(--accent);color:#fff;font-weight:900;font-size:17px;cursor:pointer}
+
+@media(max-width:980px){.hero-grid,.cards,.route-grid,.sponsor-grid,.footer-cta,.proof-grid,.meta-grid,.fit-grid,.price-wrap,.link-grid,.agenda-grid,.speaker-grid{grid-template-columns:1fr}.featured{transform:none}.route-head{flex-direction:column}.hero{padding:64px 0 68px}.section{padding:72px 0}.signup{padding:78px 0}.sticky a,.sticky button{min-width:unset;flex:1}.speaker-card{grid-template-columns:1fr}.speaker-photo{width:96px}}
+@media(max-width:640px){.container{width:min(var(--max),calc(100% - 20px))}.btn{width:100%}.btn-row{flex-direction:column}.sticky{gap:8px;padding:10px}.sticky a,.sticky button{padding:14px 16px;font-size:17px}.qr-real{width:190px;height:190px}.qr-real img{width:150px;height:150px}.eyebrow{font-size:14px}.section{padding:78px 0}.headline{font-size:48px;line-height:1.02}.subheadline{font-size:28px;line-height:1.25}.lead{font-size:22px;line-height:1.8}.chip{font-size:15px;padding:12px 18px}.section-lead{font-size:22px;line-height:1.8}.flow-sub{font-size:14px}.flow-title{font-size:32px}.flow-text,.route-card p,.route-note,.checklist,.sponsor-card ul,.small-note,.hero-box p,.proof-card p,.fit-card p{font-size:20px;line-height:1.9}.route-note,.link-card,.proof-card,.fit-card,.meta-card,.card,.sponsor-card,.price-box,.route-card,.hero-box,.signup-card,.agenda-card,.speaker-card,.bio-card{padding:24px}.sponsor-card h3,strong{font-size:30px}.sponsor-card .plan-tag,.muted-2,.tiny-proof{font-size:15px}.price{font-size:62px}.link-value{font-size:20px}.time-box{min-width:78px;padding:12px 14px}.time-box strong{font-size:26px}.time-box span{font-size:14px}.entry-icon{width:210px;height:210px}.entry-icon span{font-size:28px}.entry-emoji{font-size:78px}.entry-emoji .accent-mark,.entry-emoji.team .accent-mark{font-size:48px}.meta-card strong{font-size:32px}.btn{font-size:20px}.count-live{font-size:20px}h2{font-size:38px;line-height:1.18}}
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="chip">2026年7月29日｜台南安平維悅酒店｜14:00–17:00</span>
+      <div class="location-badge" style="margin-top:18px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.2 7.3 11.8.2.2.5.2.7 0C12.7 21.2 20 15.4 20 10c0-4.4-3.6-8-8-8z" fill="currentColor"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
+        台南場<span style="margin-left:8px">AI Talk</span>
+      </div>
+      <h1 class="headline">AI微型論壇</h1>
+      <div class="subheadline">從最落地的AI應用開始，效率直接翻倍</div>
+      <p class="lead">這不是一場只聽概念的講座，而是一場讓你 <strong>真的開始使用 AI</strong> 的實戰活動。13:30 即可入場，現場設有小型 AI 體驗活動，零基礎也能跟上。</p>
+
+      <div class="countdown">
+        <div class="count-live"><span class="count-dot"></span> 限量 100 席｜目前已報名 <span id="live-count">18</span> 人｜剩餘 <span id="remaining-count">82</span> 席</div>
+        <div class="count-timer" id="countdown-timer" aria-label="活動倒數計時">
+          <div class="time-box"><strong id="days">--</strong><span>天</span></div>
+          <div class="time-box"><strong id="hours">--</strong><span>時</span></div>
+          <div class="time-box"><strong id="minutes">--</strong><span>分</span></div>
+          <div class="time-box"><strong id="seconds">--</strong><span>秒</span></div>
+        </div>
+      </div>
+      <div class="small-note">越接近活動日，名額越快滿。現在先卡位，最安心。</div>
+
+      <div class="btn-row">
+        <button class="btn btn-primary" onclick="showRegisterModal()">立即報名</button>
+        <a class="btn btn-secondary" href="#agenda">先看活動內容</a>
+      </div>
+
+      <div class="meta-grid">
+        <div class="meta-card hero-box"><div class="muted-2">活動費用</div><strong>0 元</strong></div>
+        <div class="meta-card hero-box"><div class="muted-2">報名加碼</div><strong style="font-size:22px">贊助好禮 敬請期待</strong></div>
+        <div class="meta-card hero-box"><div class="muted-2">適合對象</div><strong style="font-size:24px">老闆 / 創業者 / 上班族</strong></div>
+      </div>
+    </div>
+
+    <div class="hero-box">
+      <span class="badge">報名就送</span>
+      <h3>好禮籌備中</h3>
+      <p>我們正在洽談贊助廠商，加碼好禮確定後將在這裡公布，敬請期待！</p>
+      <div class="proof-grid">
+        <div class="proof-card" style="padding:20px;background:#fff;border:1px solid #eadfce">
+          <div class="eyebrow" style="letter-spacing:.12em;text-transform:none">你今天會得到</div>
+          <div style="display:grid;gap:8px;margin-top:12px;color:var(--muted)">
+            <div>• 看懂 5 個最落地的 AI 應用場景</div>
+            <div>• 現場小型 AI 體驗活動，動手玩 AI</div>
+            <div>• 直接操作，學完立刻能用</div>
+            <div>• 認識願意分享實戰經驗的講師群</div>
+          </div>
+        </div>
+        <div class="proof-card" style="padding:20px;background:#f3e7d5;border:1px solid #eadfce">
+          <div class="eyebrow" style="letter-spacing:.12em;text-transform:none">AI 實力展示</div>
+          <p style="margin:10px 0 0;color:var(--muted)">本頁面示範由 <strong>AI 一鍵生成技術</strong>完成。你現在看到的，就是 AI 能做出來的成果。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="agenda">
+  <div class="container">
+    <div class="eyebrow">活動議程</div>
+    <h2>5 大主題，從最落地的AI應用開始</h2>
+    <p class="section-lead">不談理論，直接看見別人怎麼用 AI 解決真實問題——這是一場動手就能上手的 AI 微型論壇。</p>
+
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="num">01</div>
+        <div class="flow-title" style="font-size:22px;margin-top:14px">社群演算法解密大公開！告別無效發文與流水帳！</div>
+        <span class="agenda-speaker">王彤</span>
+      </div>
+      <div class="agenda-card">
+        <div class="num">02</div>
+        <div class="flow-title" style="font-size:22px;margin-top:14px">問問 Gemini，他能做的比你想像的還要多更多！</div>
+        <span class="agenda-speaker">蘇秦</span>
+      </div>
+      <div class="agenda-card">
+        <div class="num">03</div>
+        <div class="flow-title" style="font-size:22px;margin-top:14px">特別邀請嘉賓分享：中小微企業補助貸款</div>
+        <span class="agenda-speaker tbd">神秘嘉賓</span>
+      </div>
+      <div class="agenda-card">
+        <div class="num">04</div>
+        <div class="flow-title" style="font-size:22px;margin-top:14px">AI 時間管理術，最懂你的智能化預約系統</div>
+        <span class="agenda-speaker">燒茶</span>
+      </div>
+      <div class="agenda-card">
+        <div class="num">05</div>
+        <div class="flow-title" style="font-size:22px;margin-top:14px">零基礎學 AI 比較快，出一張嘴叫 AI 當一個好助理</div>
+        <span class="agenda-speaker">大樹教練</span>
+      </div>
+    </div>
+
+    <div class="fit-grid">
+      <div class="fit-card"><strong>適合誰參加</strong><p style="margin:8px 0 0;color:var(--muted)">想提升社群經營效率的老闆</p></div>
+      <div class="fit-card"><strong>適合誰參加</strong><p style="margin:8px 0 0;color:var(--muted)">想用 AI 工具加速工作的創業者</p></div>
+      <div class="fit-card"><strong>適合誰參加</strong><p style="margin:8px 0 0;color:var(--muted)">想了解政府補助貸款資源的中小微企業主</p></div>
+      <div class="fit-card"><strong>適合誰參加</strong><p style="margin:8px 0 0;color:var(--muted)">想從零開始學 AI 的上班族</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="speakers" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">講師陣容</div>
+    <h2>點擊頭像，看完整講師簡介</h2>
+    <p class="section-lead">講師簡介陸續更新中，確認的資料會第一時間補上這裡。</p>
+
+    <div class="speaker-grid">
+      <div class="speaker-card">
+        <a href="#bio-wang"><div class="speaker-photo"><img src="images/speaker-wang.jpg" alt="王彤 頭像"></div></a>
+        <div>
+          <div class="speaker-name">王彤</div>
+          <div class="speaker-title">商圈救星｜商圈行銷顧問</div>
+          <div class="speaker-topic">主題：社群演算法解密大公開！告別無效發文與流水帳！</div>
+          <div class="speaker-actions"><a href="#bio-wang" class="btn-mini">查看講師完整資訊</a></div>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <a href="#bio-su"><div class="speaker-photo"><img src="images/speaker-su.jpg" alt="蘇秦 頭像"></div></a>
+        <div>
+          <div class="speaker-name">蘇秦</div>
+          <div class="speaker-title">AI 教學工具專家｜Google AI 認證講師</div>
+          <div class="speaker-topic">主題：問問 Gemini，他能做的比你想像的還要多更多！</div>
+          <div class="speaker-actions"><a href="#bio-su" class="btn-mini">查看講師完整資訊</a></div>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <a href="#bio-shaocha"><div class="speaker-photo"><img src="images/speaker-shaocha.jpg" alt="燒茶 頭像"></div></a>
+        <div>
+          <div class="speaker-name">燒茶</div>
+          <div class="speaker-title">首席技術長 CTO｜全雲端解決方案顧問</div>
+          <div class="speaker-topic">主題：AI 時間管理術，最懂你的智能化預約系統</div>
+          <div class="speaker-actions"><a href="#bio-shaocha" class="btn-mini">查看講師完整資訊</a></div>
+        </div>
+      </div>
+
+      <div class="speaker-card">
+        <a href="#bio-dashu"><div class="speaker-photo"><img src="images/speaker-dashu.jpg" alt="大樹教練 頭像"></div></a>
+        <div>
+          <div class="speaker-name">大樹教練</div>
+          <div class="speaker-title">AI 導入教練｜海餅乾俱樂部創辦人</div>
+          <div class="speaker-topic">主題：零基礎學 AI 比較快，出一張嘴叫 AI 當一個好助理</div>
+          <div class="speaker-actions"><a href="#bio-dashu" class="btn-mini">查看講師完整資訊</a></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards" style="grid-template-columns:1fr;margin-top:30px;gap:20px">
+      <div class="card bio-card" id="bio-wang">
+        <div class="bio-tag">講師簡介</div>
+        <h3>王彤｜學經歷</h3>
+        <p>現職凱信國際行銷有限公司（另涉獵鴻雁數位傳媒國際有限公司等個人／數位行銷事業），擔任文案作家與商圈行銷顧問。專精老舊商圈活化、新商圈成立行銷策略，以及政府商圈補助申請與資源整合，長期提供商圈召集人／理事長行銷顧問服務，業界人稱「商圈救星」。實際參與高雄在地商圈活動（如河堤商圈協作中心等），協助店家數位轉型、IP 行銷、LINE 經營。本場主題：社群演算法解密大公開，告別無效發文與流水帳，帶你看懂真正有效的社群經營策略。</p>
+      </div>
+      <div class="card bio-card" id="bio-su">
+        <div class="bio-tag">講師簡介</div>
+        <h3>蘇秦 Su Chin｜學經歷</h3>
+        <p>曾任高雄師範大學進修學院課程講師、台南市補教協會職訓課程講師。著有《英語教學神助手：AI命題、備課與課程設計，100+超實用指令直接複製貼上》，取得 Google Generative AI for Educators Certificate 等 AI 專業證書。本場主題：問問 Gemini，他能做的比你想像的還要多更多——帶你看見 AI 助理能做到的事，遠比你想像的還要多。</p>
+      </div>
+      <div class="card bio-card" id="bio-shaocha">
+        <div class="bio-tag">講師簡介</div>
+        <h3>燒茶 林祥禔｜學經歷</h3>
+        <p>嘉享賀企業有限公司／Phone Dr. 365 數位導航系統首席技術長（CTO）。專精 Google 資訊整合顧問、雲端管理顧問、數位資產保險與資料安全講師，專長手機與企業資訊雲端化、空間管理、資料備份與安全，以及 3C 養生之道（改變使用習慣）。長期推廣「全雲端」解決方案，強調安全第一、無限空間、永續（十年起跳）。本場主題：AI 時間管理術，最懂你的智能化預約系統——帶你看懂如何用 AI 打造最懂客戶的自動化預約流程。</p>
+      </div>
+      <div class="card bio-card" id="bio-dashu">
+        <div class="bio-tag">講師簡介</div>
+        <h3>大樹教練｜學經歷</h3>
+        <p>培訓教練・團隊組建・演講訓練・AI 導入教練。投入教育超過 25 年，演講超過 6,000 場，足跡遍及台灣、新加坡、馬來西亞及中國大陸。海餅乾俱樂部創辦人，BNI 大台南南區執行董事，AI 百人導師計畫召集人。本場主題：零基礎學 AI 比較快，出一張嘴叫 AI 當一個好助理——現場示範零程式基礎也能上手的 AI 使用方法。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="highlight">
+  <div class="container">
+    <div class="eyebrow">活動最大亮點</div>
+    <h2>免費入場，現場還有小型 AI 體驗活動</h2>
+    <p>這不只是一場論壇，更是一次讓你 <strong>動手玩 AI</strong> 的機會。從最落地的 AI 應用開始，效率直接翻倍。</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container price-wrap">
+    <div>
+      <div class="eyebrow">為什麼現在要參加</div>
+      <h2>你不是缺資訊，你是缺一次真正上手的機會</h2>
+      <p class="section-lead">AI 已經改變工作方式，但真正會用的人其實還不多。你不需要再看一堆資訊，而是需要一次被帶著走、一次看懂、一次學會。</p>
+      <div style="display:grid;gap:12px;margin-top:18px;color:var(--muted)">
+        <div>✔ 免費入場，用 3 小時看懂 5 個最落地的 AI 應用</div>
+        <div>✔ 現場小型 AI 體驗活動，動手玩 AI</div>
+        <div>✔ 先卡位，避免 100 席快速額滿</div>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <div class="eyebrow" style="letter-spacing:.12em">活動費用</div>
+      <div class="price">0</div>
+      <div style="font-weight:900;color:#6b5134">完全免費，只送不收</div>
+      <div class="checklist">
+        <div>✔ 3 小時 AI 微型論壇</div>
+        <div>✔ 5 大主題實戰分享</div>
+        <div>✔ 現場小型 AI 體驗活動</div>
+        <div>✔ 商務交流機會</div>
+        <div>✔ 報名加碼贈送贊助廠商伴手禮（洽談中）</div>
+      </div>
+      <div class="btn-row" style="margin-top:24px">
+        <button class="btn btn-primary" style="width:100%" onclick="showRegisterModal()">手刀搶免費名額</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="route section">
+  <div class="container">
+    <div class="eyebrow">報名方式</div>
+    <h2>選擇你的報名方式</h2>
+    <p class="section-lead">為了讓流程更直覺，我們把入口設計成兩個按鈕：<strong>個人報名</strong>與<strong>企業合作</strong>。點擊後會直接跳出報名視窗，送出即可。</p>
+
+    <div class="route-grid">
+
+      <div class="route-card" onclick="showRegisterModal()">
+        <div class="route-head">
+          <div>
+            <strong style="font-size:24px">個人報名</strong>
+            <p style="margin:10px 0 0;color:var(--muted)">適合個人、創業者、上班族<br>想學會 AI 並提升效率的人</p>
+            <div class="route-note">點擊後 → 直接跳出報名視窗 → 填寫送出即可</div>
+          </div>
+          <div class="entry-icon">
+            <div class="entry-emoji"><span>👤</span><span class="accent-mark">⚡</span></div>
+            <span>個人</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="route-card" onclick="showRegisterModal()">
+        <div class="route-head">
+          <div>
+            <strong style="font-size:24px">企業合作</strong>
+            <p style="margin:10px 0 0;color:var(--muted)">適合企業品牌曝光<br>或想參與活動合作的團隊</p>
+            <div class="route-note">點擊後 → 直接跳出報名視窗 → 填寫送出即可</div>
+          </div>
+          <div class="entry-icon">
+            <div class="entry-emoji team"><span>👥</span><span class="accent-mark">🏢</span></div>
+            <span>團隊</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="sponsor">
+  <div class="container">
+    <div class="eyebrow">贊助合作</div>
+    <h2>誠徵贊助夥伴，好禮由你贊助</h2>
+    <p class="section-lead">我們正在尋找認同 AI 普及理念的企業夥伴，贊助加碼好禮或現場設攤曝光，詳細方案歡迎透過 LINE 直接洽談。</p>
+
+    <div class="sponsor-grid">
+      <div class="sponsor-card">
+        <h3>品牌曝光</h3>
+        <div class="plan-tag">現場露出</div>
+        <ul>
+          <li>現場 LED 牆 / 物料曝光贊助企業品牌</li>
+          <li>精準接觸中小微企業主與創業者</li>
+        </ul>
+      </div>
+      <div class="sponsor-card">
+        <h3>現場設攤</h3>
+        <div class="plan-tag">直接互動</div>
+        <ul>
+          <li>提供攤位與贊助企業直接互動</li>
+          <li>現場發放贊助商品牌/伴手禮</li>
+        </ul>
+      </div>
+      <div class="sponsor-card">
+        <h3>加碼好禮贊助</h3>
+        <div class="plan-tag">報名就送</div>
+        <ul>
+          <li>贊助報名加碼伴手禮，出現在每一位報名者手上</li>
+          <li>最具傳播力的曝光方式</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="sponsor-note">方案細節尚未定案，歡迎品牌方直接透過 LINE 聯繫洽談，我們會依合作深度客製規劃。</p>
+  </div>
+</section>
+
+<section class="signup" id="signup">
+  <div class="container">
+    <div class="signup-card">
+      <div class="footer-cta">
+        <div>
+          <div class="eyebrow">立即行動</div>
+          <h2>名額有限，100 席就緒即可入場</h2>
+          <p class="section-lead">從最落地的 AI 應用開始，效率直接翻倍。這場論壇，可能就是你正式把 AI 用進工作的起點。</p>
+          <div class="link-grid">
+            <div class="link-card">
+              <div class="muted-2">活動日期</div>
+              <div class="link-value">2026年7月29日（三）14:00–17:00</div>
+            </div>
+            <div class="link-card">
+              <div class="muted-2">活動地點</div>
+              <div class="link-value">台南安平維悅酒店</div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" onclick="showRegisterModal()">點我立即報名</button>
+            <a class="btn btn-secondary" href="https://lin.ee/o5pODV8" target="_blank" rel="noopener noreferrer">直接加入 LINE</a>
+          </div>
+        </div>
+
+        <aside class="qr-panel">
+          <div class="qr-real">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Flin.ee%2Fo5pODV8" alt="LINE 報名 QR Code">
+          </div>
+          <div style="margin-top:18px;font-size:22px;font-weight:900">掃碼加入 LINE</div>
+          <div style="margin-top:8px;font-size:14px;line-height:1.8;color:#6c6157">掃描後直接加入 LINE，或點擊上方「立即報名」直接送出資料。</div>
+          <div class="tiny-proof">本頁面由 <strong>AI 一鍵生成技術</strong>完成。<br>這不只是活動頁，也是 AI 實戰能力的展示。</div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  AI Talk｜AI微型論壇 台南場 活動頁面
+</footer>
+
+<div class="sticky">
+  <button class="primary" onclick="showRegisterModal()">立即報名</button>
+  <a href="https://lin.ee/o5pODV8" target="_blank" rel="noopener noreferrer">加入 LINE</a>
+</div>
+
+<!-- ===== Registration Modal ===== -->
+<div class="modal-overlay" id="registerModal">
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <h3>報名 AI 微型論壇</h3>
+        <p>AI微型論壇－台南場｜7/29（三）14:00–17:00｜安平維悅酒店</p>
+      </div>
+      <button class="modal-close" onclick="hideRegisterModal()" aria-label="關閉">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form id="registerForm" onsubmit="submitRegistration(event)">
+        <label for="regName">姓名</label>
+        <input type="text" id="regName" required placeholder="請輸入姓名">
+        <label for="regPhone">聯絡電話</label>
+        <input type="tel" id="regPhone" required placeholder="0912-345-678">
+        <button type="submit" class="modal-submit">送出並前往 LINE 完成報名</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const eventDate = new Date('2026-07-29T14:00:00+08:00').getTime();
+  const ids = {
+    days: document.getElementById('days'),
+    hours: document.getElementById('hours'),
+    minutes: document.getElementById('minutes'),
+    seconds: document.getElementById('seconds'),
+    liveCount: document.getElementById('live-count'),
+    remainingCount: document.getElementById('remaining-count')
+  };
+
+  function pad(n){ return String(n).padStart(2,'0'); }
+
+  function updateCountdown(){
+    const now = Date.now();
+    const diff = eventDate - now;
+    if(diff <= 0){
+      ids.days.textContent = '00';
+      ids.hours.textContent = '00';
+      ids.minutes.textContent = '00';
+      ids.seconds.textContent = '00';
+      return;
+    }
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff / (1000*60*60)) % 24);
+    const minutes = Math.floor((diff / (1000*60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+    ids.days.textContent = pad(days);
+    ids.hours.textContent = pad(hours);
+    ids.minutes.textContent = pad(minutes);
+    ids.seconds.textContent = pad(seconds);
+  }
+
+  function updateLiveCount(){
+    const startCount = 18;            // 目前起始報名人數，修改這裡
+    const maxSeats = 100;             // 總席次
+    const startDate = new Date('2026-07-11T00:00:00+08:00').getTime(); // 修改這裡：開始累積的基準日
+
+    const now = Date.now();
+    const hoursPassed = Math.floor((now - startDate) / (1000 * 60 * 60));
+
+    // 每3小時 +1 人
+    const increments = Math.floor(hoursPassed / 3);
+
+    let current = startCount + increments;
+
+    if(current > maxSeats){
+      current = maxSeats;
+    }
+
+    ids.liveCount.textContent = current;
+    ids.remainingCount.textContent = Math.max(0, maxSeats - current);
+  }
+
+  updateCountdown();
+  updateLiveCount();
+  setInterval(updateCountdown, 1000);
+  setInterval(updateLiveCount, 60000);  // 每分鐘檢查一次人數變化
+})();
+
+function showRegisterModal(){
+  document.getElementById('registerModal').classList.add('active');
+}
+function hideRegisterModal(){
+  document.getElementById('registerModal').classList.remove('active');
+  document.getElementById('registerForm').reset();
+}
+
+// 小龍蝦專線 LINE（比照「大樹小講」頁面：送出即直接帶到 LINE，不需再進官方選單按 1234）
+const LINE_URL = 'https://lin.ee/o5pODV8';
+
+function submitRegistration(e){
+  e.preventDefault();
+  const name = document.getElementById('regName').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  if(!name || !phone){ alert('請完整填寫姓名與聯絡電話'); return; }
+  const msg = `您好，我想報名【AI微型論壇－台南場】\n日期：2026/7/29（三）14:00–17:00\n地點：台南安平維悅酒店\n姓名：${name}\n電話：${phone}\n請協助確認席次，謝謝！`;
+  navigator.clipboard.writeText(msg).catch(() => {});
+  hideRegisterModal();
+  window.open(LINE_URL, '_blank');
+  setTimeout(() => alert('報名訊息已複製，請在 LINE 對話框貼上送出，完成報名！'), 300);
+}
+</script>
+</body>
+</html>
