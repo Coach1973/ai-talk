@@ -188,9 +188,77 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 
 @media(max-width:980px){.hero-grid,.cards,.route-grid,.sponsor-grid,.footer-cta,.proof-grid,.meta-grid,.fit-grid,.price-wrap,.link-grid,.agenda-grid,.speaker-grid{grid-template-columns:1fr}.featured{transform:none}.route-head{flex-direction:column}.hero{padding:64px 0 68px}.section{padding:72px 0}.signup{padding:78px 0}.sticky a,.sticky button{min-width:unset;flex:1}.speaker-card{grid-template-columns:1fr}.speaker-photo{width:96px}}
 @media(max-width:640px){.container{width:min(var(--max),calc(100% - 20px))}.btn{width:100%}.btn-row{flex-direction:column}.sticky{gap:8px;padding:10px}.sticky a,.sticky button{padding:14px 16px;font-size:17px}.qr-real{width:190px;height:190px}.qr-real img{width:150px;height:150px}.eyebrow{font-size:14px}.section{padding:78px 0}.headline{font-size:48px;line-height:1.02}.subheadline{font-size:28px;line-height:1.25}.lead{font-size:22px;line-height:1.8}.chip{font-size:15px;padding:12px 18px}.section-lead{font-size:22px;line-height:1.8}.flow-sub{font-size:14px}.flow-title{font-size:32px}.flow-text,.route-card p,.route-note,.checklist,.sponsor-card ul,.small-note,.hero-box p,.proof-card p,.fit-card p{font-size:20px;line-height:1.9}.route-note,.link-card,.proof-card,.fit-card,.meta-card,.card,.sponsor-card,.price-box,.route-card,.hero-box,.signup-card,.agenda-card,.speaker-card,.bio-card{padding:24px}.sponsor-card h3,strong{font-size:30px}.sponsor-card .plan-tag,.muted-2,.tiny-proof{font-size:15px}.price{font-size:62px}.link-value{font-size:20px}.time-box{min-width:78px;padding:12px 14px}.time-box strong{font-size:26px}.time-box span{font-size:14px}.entry-icon{width:210px;height:210px}.entry-icon span{font-size:28px}.entry-emoji{font-size:78px}.entry-emoji .accent-mark,.entry-emoji.team .accent-mark{font-size:48px}.meta-card strong{font-size:32px}.btn{font-size:20px}.count-live{font-size:20px}h2{font-size:38px;line-height:1.18}}
+
+/* 導覽列 Navbar */
+.navbar{position:fixed;top:0;left:0;width:100%;z-index:900;background:rgba(255,253,249,.92);backdrop-filter:blur(10px);transition:box-shadow .2s}
+.navbar.nav-scrolled{box-shadow:0 4px 20px rgba(89,67,46,.12)}
+.navbar-inner{max-width:var(--max);margin:auto;width:min(var(--max),calc(100% - 32px));height:64px;display:flex;align-items:center;justify-content:space-between}
+.navbar-brand{font-weight:900;font-size:20px;color:var(--text)}
+.navbar-brand span{color:var(--accent)}
+.navbar-links{display:flex;align-items:center;gap:28px;font-weight:800;font-size:15px}
+.navbar-links a{color:var(--text);transition:color .2s}
+.navbar-links a:hover{color:var(--accent-2)}
+.navbar-cta{background:#241f1a;color:#fff;padding:10px 22px;border-radius:999px;font-weight:900;font-size:14px;border:none;cursor:pointer;font-family:inherit}
+.navbar-hamburger{display:none;width:40px;height:40px;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer;font-size:22px;color:var(--text)}
+.navbar-mobile-menu{display:none;position:fixed;top:64px;left:0;width:100%;background:var(--bg-soft);box-shadow:0 12px 30px rgba(89,67,46,.14);flex-direction:column;text-align:center;padding:8px 0;z-index:899}
+.navbar-mobile-menu.show{display:flex}
+.navbar-mobile-menu a{display:block;padding:14px;font-weight:800;color:var(--text)}
+.navbar-mobile-menu button{margin:8px 24px 4px}
+@media(max-width:900px){.navbar-links,.navbar-cta{display:none}.navbar-hamburger{display:flex}}
+
+/* 回到最上面 */
+.back-to-top{position:fixed;bottom:90px;right:20px;width:48px;height:48px;border-radius:50%;background:#241f1a;color:#fff;border:none;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:850;box-shadow:0 10px 26px rgba(36,31,26,.24)}
+.back-to-top.show{opacity:1;pointer-events:auto}
+.back-to-top:hover{transform:translateY(-3px)}
+
+/* 精彩花絮 Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.gallery-item{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.gallery-item:hover img{transform:scale(1.06)}
+@media(max-width:980px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+/* 常見問答 FAQ */
+.faq-list{margin-top:30px;display:grid;gap:14px}
+.faq-item{background:var(--paper);border:1px solid #e4d4bf;border-radius:20px;overflow:hidden}
+.faq-q{width:100%;text-align:left;padding:20px 24px;background:transparent;border:none;cursor:pointer;font-family:inherit;font-size:17px;font-weight:900;color:var(--text);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q .faq-icon{flex-shrink:0;transition:transform .25s;color:var(--accent);font-size:20px}
+.faq-item.open .faq-q .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.faq-item.open .faq-a{max-height:300px}
+.faq-a p{margin:0;padding:0 24px 20px;color:var(--muted);font-size:15px;line-height:1.85}
+@media(max-width:640px){.faq-q{font-size:20px;padding:20px}.faq-a p{font-size:19px}}
 </style>
 </head>
 <body>
+
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#top" class="navbar-brand">AI<span>微型論壇</span></a>
+    <div class="navbar-links">
+      <a href="#agenda">五大主題</a>
+      <a href="#speakers">講師陣容</a>
+      <a href="#why-join">為什麼要參加</a>
+      <a href="#sponsor">贊助夥伴</a>
+      <a href="#signup">立即報名</a>
+    </div>
+    <button class="navbar-cta" onclick="showTypeModal()">立即報名</button>
+    <button class="navbar-hamburger" id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="開啟選單">
+      <span id="mobileMenuIcon">&#9776;</span>
+    </button>
+  </div>
+  <div class="navbar-mobile-menu" id="mobileMenu">
+    <a href="#agenda" onclick="closeMobileMenu()">五大主題</a>
+    <a href="#speakers" onclick="closeMobileMenu()">講師陣容</a>
+    <a href="#why-join" onclick="closeMobileMenu()">為什麼要參加</a>
+    <a href="#sponsor" onclick="closeMobileMenu()">贊助夥伴</a>
+    <a href="#signup" onclick="closeMobileMenu()">立即報名</a>
+    <button class="btn btn-primary" onclick="showTypeModal();closeMobileMenu();">立即報名</button>
+  </div>
+</nav>
+
+<button class="back-to-top" id="backToTop" onclick="scrollToTop()" aria-label="回到最上面">&#8593;</button>
 
 <header class="hero" id="top">
   <div class="container hero-grid">
@@ -366,6 +434,23 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   </div>
 </section>
 
+<section class="section" id="gallery" style="padding-top:0">
+  <div class="container">
+    <div class="eyebrow">精彩花絮</div>
+    <h2>過去場次現場實況</h2>
+    <p class="section-lead">每一場都是滿滿的人潮跟熱烈互動，這次台南場，換你在現場。</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/gallery-1.jpg" alt="過去講座現場花絮1" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-2.jpg" alt="過去講座現場花絮2" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-3.jpg" alt="過去講座現場花絮3" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-4.jpg" alt="過去講座現場花絮4" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-5.jpg" alt="過去講座現場花絮5" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-6.jpg" alt="過去講座現場花絮6" loading="lazy"></div>
+      <div class="gallery-item"><img src="images/gallery-7.jpg" alt="過去講座現場花絮7" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
 <section class="highlight">
   <div class="container">
     <div class="eyebrow">活動最大亮點</div>
@@ -374,7 +459,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="why-join">
   <div class="container price-wrap">
     <div>
       <div class="eyebrow">為什麼現在要參加</div>
@@ -445,7 +530,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   </div>
 </section>
 
-<section class="sponsor">
+<section class="sponsor" id="sponsor">
   <div class="container">
     <div class="eyebrow">贊助合作</div>
     <h2>誠徵贊助夥伴，好禮由你贊助</h2>
@@ -479,6 +564,39 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
     </div>
 
     <p class="sponsor-note">方案細節尚未定案，歡迎品牌方直接透過 LINE 聯繫洽談，我們會依合作深度客製規劃。</p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="eyebrow">常見問答</div>
+    <h2>報名前，你可能想先知道</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">參加需要任何 AI 或程式基礎嗎？<span class="faq-icon">+</span></button>
+        <div class="faq-a"><p>完全不需要。這場論壇就是設計給零基礎的人，講師會用最直白的方式帶你動手操作，現場也有小型 AI 體驗活動，跟著做就會。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">真的免費入場嗎？有什麼隱藏費用嗎？</button>
+        <div class="faq-a"><p>完全免費，限量 100 席。報名還加碼贈送贊助廠商準備的伴手禮，沒有任何隱藏收費。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">現場需要自備筆電或手機嗎？</button>
+        <div class="faq-a"><p>建議攜帶手機或筆電，方便跟著講師現場實作 AI 體驗活動；沒有帶也沒關係，看講師示範一樣能學到方法。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">安平維悅酒店停車方便嗎？</button>
+        <div class="faq-a"><p>飯店本身備有停車場，現場也會有工作人員協助指引，建議提早 15-20 分鐘抵達，13:30 即可入場。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">企業想贊助或現場設攤，要怎麼聯繫？</button>
+        <div class="faq-a"><p>歡迎直接點選「贊助夥伴」區塊的 LINE 聯繫方式洽談，我們會依合作深度提供客製化方案。</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">報名後會收到確認通知嗎？</button>
+        <div class="faq-a"><p>送出報名表單後，系統會引導你透過 LINE 傳送報名訊息給我們，我們收到後會直接在 LINE 上跟你確認席次。</p></div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -769,6 +887,41 @@ function copyLineMessage(){
 function sendToLine(){
   window.open(LINE_REGISTRATION_URL, '_blank');
 }
+
+function initNavbar(){
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) navbar.classList.add('nav-scrolled');
+    else navbar.classList.remove('nav-scrolled');
+  });
+}
+function toggleMobileMenu(){
+  const menu = document.getElementById('mobileMenu');
+  const isOpen = menu.classList.contains('show');
+  if (isOpen) closeMobileMenu();
+  else menu.classList.add('show');
+}
+function closeMobileMenu(){
+  document.getElementById('mobileMenu').classList.remove('show');
+}
+function scrollToTop(){
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+function initBackToTop(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) btn.classList.add('show');
+    else btn.classList.remove('show');
+  });
+}
+function toggleFaq(btn){
+  btn.parentElement.classList.toggle('open');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  initNavbar();
+  initBackToTop();
+});
 
 document.addEventListener('keydown', (e) => {
   if(e.key === 'Escape'){
