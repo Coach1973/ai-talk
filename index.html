@@ -211,13 +211,14 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 .back-to-top.show{opacity:1;pointer-events:auto}
 .back-to-top:hover{transform:translateY(-3px)}
 
-/* 精彩花絮 Gallery */
-.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
-.gallery-item{border-radius:20px;overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow)}
-.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
-.gallery-item:hover img{transform:scale(1.06)}
-@media(max-width:980px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:640px){.gallery-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+/* 精彩花絮 輪播（比照大樹小講carousel模式：單張顯示、上一張/下一張、自動播放） */
+.carousel-wrap{position:relative;border-radius:30px;overflow:hidden;background:var(--paper2,#f6f1e8);border:1px solid #e4d4bf;box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;min-height:280px;margin-top:30px}
+.carousel-wrap img{max-height:70vh;max-width:100%;width:auto;margin:0 auto;display:block}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;background:rgba(255,255,255,.92);border:none;box-shadow:0 6px 20px rgba(0,0,0,.14);display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--accent);cursor:pointer}
+.carousel-btn:hover{background:#fff}
+.carousel-prev{left:14px}
+.carousel-next{right:14px}
+.carousel-counter{position:absolute;bottom:14px;right:16px;background:rgba(0,0,0,.55);color:#fff;font-size:13px;font-weight:800;padding:5px 14px;border-radius:999px}
 
 /* 常見問答 FAQ */
 .faq-list{margin-top:30px;display:grid;gap:14px}
@@ -439,14 +440,11 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
     <div class="eyebrow">精彩花絮</div>
     <h2>過去場次現場實況</h2>
     <p class="section-lead">每一場都是滿滿的人潮跟熱烈互動，這次台南場，換你在現場。</p>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/gallery-1.jpg" alt="過去講座現場花絮1" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-2.jpg" alt="過去講座現場花絮2" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-3.jpg" alt="過去講座現場花絮3" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-4.jpg" alt="過去講座現場花絮4" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-5.jpg" alt="過去講座現場花絮5" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-6.jpg" alt="過去講座現場花絮6" loading="lazy"></div>
-      <div class="gallery-item"><img src="images/gallery-7.jpg" alt="過去講座現場花絮7" loading="lazy"></div>
+    <div class="carousel-wrap">
+      <img id="carouselImg" src="images/carousel/photo-01.jpg" alt="過去講座現場花絮">
+      <button class="carousel-btn carousel-prev" onclick="carouselPrev()" aria-label="上一張">&#10094;</button>
+      <button class="carousel-btn carousel-next" onclick="carouselNext()" aria-label="下一張">&#10095;</button>
+      <div class="carousel-counter" id="carouselCounter">1 / 12</div>
     </div>
   </div>
 </section>
@@ -918,9 +916,41 @@ function toggleFaq(btn){
   btn.parentElement.classList.toggle('open');
 }
 
+// ===== 精彩花絮輪播（比照大樹小講carousel模式，12張，自動播放+手動切換） =====
+const CAROUSEL_TOTAL = 12;
+let carouselIndex = 0;
+function carouselRender(){
+  const img = document.getElementById('carouselImg');
+  const counter = document.getElementById('carouselCounter');
+  if (!img) return;
+  const n = String(carouselIndex + 1).padStart(2, '0');
+  img.src = `images/carousel/photo-${n}.jpg`;
+  img.alt = `過去講座現場花絮 ${carouselIndex + 1}`;
+  counter.textContent = `${carouselIndex + 1} / ${CAROUSEL_TOTAL}`;
+}
+let carouselTimer = null;
+function carouselResetTimer(){
+  if (carouselTimer) clearInterval(carouselTimer);
+  carouselTimer = setInterval(carouselNext, 4000);
+}
+function carouselPrev(){
+  carouselIndex = (carouselIndex - 1 + CAROUSEL_TOTAL) % CAROUSEL_TOTAL;
+  carouselRender();
+  carouselResetTimer();
+}
+function carouselNext(){
+  carouselIndex = (carouselIndex + 1) % CAROUSEL_TOTAL;
+  carouselRender();
+}
+function initPhotoCarousel(){
+  carouselRender();
+  carouselResetTimer();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
   initBackToTop();
+  initPhotoCarousel();
 });
 
 document.addEventListener('keydown', (e) => {
