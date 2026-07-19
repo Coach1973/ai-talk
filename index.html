@@ -278,7 +278,7 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
       <p class="lead">這不是一場只聽概念的講座，而是一場讓你 <strong>真的開始使用 AI</strong> 的實戰活動。13:30 即可入場，現場設有小型 AI 體驗活動，零基礎也能跟上。</p>
 
       <div class="countdown">
-        <div class="count-live"><span class="count-dot"></span> 限量 100 席｜目前已報名 <span id="live-count">18</span> 人｜剩餘 <span id="remaining-count">82</span> 席</div>
+        <div class="count-live"><span class="count-dot"></span> 限量 100 席｜目前已報名 <span id="live-count">50</span> 人｜剩餘 <span id="remaining-count">50</span> 席</div>
         <div class="count-timer" id="countdown-timer" aria-label="活動倒數計時">
           <div class="time-box"><strong id="days">--</strong><span>天</span></div>
           <div class="time-box"><strong id="hours">--</strong><span>時</span></div>
@@ -777,15 +777,15 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   }
 
   function updateLiveCount(){
-    const startCount = 18;            // 目前起始報名人數，修改這裡
+    const startCount = 50;            // 目前起始報名人數，修改這裡
     const maxSeats = 100;             // 總席次
-    const startDate = new Date('2026-07-11T00:00:00+08:00').getTime(); // 修改這裡：開始累積的基準日
+    const startDate = new Date('2026-07-19T00:00:00+08:00').getTime(); // 修改這裡：開始累積的基準日
 
     const now = Date.now();
     const hoursPassed = Math.floor((now - startDate) / (1000 * 60 * 60));
 
-    // 每3小時 +1 人
-    const increments = Math.floor(hoursPassed / 3);
+    // 每6小時 +1 人（約每天+4人）
+    const increments = Math.floor(hoursPassed / 6);
 
     let current = startCount + increments;
 
