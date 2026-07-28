@@ -884,15 +884,15 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   }
 
   function updateLiveCount(){
-    const startCount = 62;            // 目前起始報名人數，修改這裡
+    const startCount = 88;            // 目前起始報名人數，修改這裡
     const maxSeats = 100;             // 總席次
-    const startDate = new Date('2026-07-24T17:15:00+08:00').getTime(); // 修改這裡：開始累積的基準日
+    const startDate = new Date('2026-07-28T08:55:00+08:00').getTime(); // 修改這裡：開始累積的基準日
 
     const now = Date.now();
     const hoursPassed = Math.floor((now - startDate) / (1000 * 60 * 60));
 
-    // 每6小時 +1 人（約每天+4人）
-    const increments = Math.floor(hoursPassed / 6);
+    // 每3小時 +2 人
+    const increments = Math.floor(hoursPassed / 3) * 2;
 
     let current = startCount + increments;
 
