@@ -134,6 +134,11 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
 .speaker-grid{grid-template-columns:repeat(2,1fr);margin-top:30px}
 .speaker-card{padding:22px;display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:start}
 .speaker-card:hover{transform:translateY(-4px)}
+button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inherit;width:100%;transition:.22s ease}
+.speaker-hint{margin-top:12px;display:inline-flex;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:900;font-size:13px}
+.speaker-bio-modal .modal-box{max-width:560px}
+.speaker-bio-modal .modal-body{padding:26px 28px 30px}
+.speaker-bio-modal .modal-body p{margin:0;color:var(--muted);font-size:15px;line-height:1.85}
 .speaker-photo{width:132px;aspect-ratio:1 / 1.2;border-radius:18px;background:linear-gradient(135deg,#f1e2cf,#e4d4bf);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;color:#8a6844;overflow:hidden;border:1px solid #e4d4bf}
 .speaker-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .speaker-name{font-size:22px;font-weight:900;color:var(--text)}
@@ -373,68 +378,53 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
     <p class="section-lead">講師簡介陸續更新中，確認的資料會第一時間補上這裡。</p>
 
     <div class="speaker-grid">
-      <div class="speaker-card">
-        <a href="#bio-jige"><div class="speaker-photo"><img src="images/speaker-jige.jpg" alt="季哥 Eric Chi 頭像"></div></a>
+      <button class="speaker-card" onclick="openSpeakerBio(this)"
+        data-name="季哥 Eric Chi" data-title="凱基人壽／保險業務" data-topic="主題：透過AI看世界／中樂透與買保險"
+        data-bio="身為數學系、數學所出身的統計博士，深知風險管理與精算邏輯在保險領域中的關鍵角色。現任凱基人壽保險與產險業務主任，結合嚴謹的學術訓練與實務經驗，致力於為客戶提供全方位、量身打造的保障規劃，從基本壽險、醫療險、重大疾病險，到車險、旅平險、住宅火險，兼顧資產配置與投資型保險的風險評估。始終堅持「專業」與「親切」並重的服務態度。本場主題：透過AI看世界／中樂透與買保險——用數學與AI的角度，重新看懂機率、風險與保障。">
+        <div class="speaker-photo"><img src="images/speaker-jige.jpg" alt="季哥 Eric Chi 頭像"></div>
         <div>
           <div class="speaker-name">季哥 Eric Chi</div>
           <div class="speaker-title">凱基人壽／保險業務</div>
           <div class="speaker-topic">主題：透過AI看世界／中樂透與買保險</div>
-          <div class="speaker-actions"><a href="#bio-jige" class="btn-mini">查看講師完整資訊</a></div>
+          <span class="speaker-hint">查看完整簡介</span>
         </div>
-      </div>
+      </button>
 
-      <div class="speaker-card">
-        <a href="#bio-hong"><div class="speaker-photo"><img src="images/speaker-hong.jpg" alt="洪詠清 頭像"></div></a>
+      <button class="speaker-card" onclick="openSpeakerBio(this)"
+        data-name="洪詠清" data-title="負責人｜嘿畫面工作室" data-topic="主題：客製APP動手作（基礎篇）"
+        data-bio="嘿畫面工作室負責人。原先是影像工作者，兼具美感與從0開始策劃的行業經驗，經歷10年後深知攝影的定位勢必隨趨勢調整，於是土法煉鋼、一問一答的方式研究AI創作，從文字類型的創作到影像的順暢製作，甚至開始製作各種便捷省時的App。目前已製作出8款可公開使用的App、5個可互動的說明式網頁操作，以及數十部AI小短片。本場主題：客製APP動手作（基礎篇）——零基礎也能跟著動手做出屬於自己的App。">
+        <div class="speaker-photo"><img src="images/speaker-hong.jpg" alt="洪詠清 頭像"></div>
         <div>
           <div class="speaker-name">洪詠清</div>
           <div class="speaker-title">負責人｜嘿畫面工作室</div>
           <div class="speaker-topic">主題：客製APP動手作（基礎篇）</div>
-          <div class="speaker-actions"><a href="#bio-hong" class="btn-mini">查看講師完整資訊</a></div>
+          <span class="speaker-hint">查看完整簡介</span>
         </div>
-      </div>
+      </button>
 
-      <div class="speaker-card">
-        <a href="#bio-lin"><div class="speaker-photo"><img src="images/speaker-lin.jpg" alt="林韋銘 頭像"></div></a>
+      <button class="speaker-card" onclick="openSpeakerBio(this)"
+        data-name="林韋銘" data-title="鵬遊執行長｜n8n&Notion整合師" data-topic="主題：AI世界的底層邏輯談Notion入門"
+        data-bio="鵬遊執行長，專注於 Notion 系統架構設計、LINE@ 商業應用整合與 N8N 自動化工作流程開發的數位旅人。以第三者切入每個專案，深入理解客戶的業務邏輯與痛點，透過低代碼（Low-Code）工具組合，為企業打造兼具彈性、可擴展性與實用性的數位化解決方案。同時身兼二寶爸，工作與家庭都要兼顧，因此很常研究數位工具管理生活，也樂於分享研究心得。本場主題：AI世界的底層邏輯談Notion入門——帶你看懂如何用Notion打造AI時代的個人與工作系統。">
+        <div class="speaker-photo"><img src="images/speaker-lin.jpg" alt="林韋銘 頭像"></div>
         <div>
           <div class="speaker-name">林韋銘</div>
           <div class="speaker-title">鵬遊執行長｜n8n&Notion整合師</div>
           <div class="speaker-topic">主題：AI世界的底層邏輯談Notion入門</div>
-          <div class="speaker-actions"><a href="#bio-lin" class="btn-mini">查看講師完整資訊</a></div>
+          <span class="speaker-hint">查看完整簡介</span>
         </div>
-      </div>
+      </button>
 
-      <div class="speaker-card">
-        <a href="#bio-dashu"><div class="speaker-photo"><img src="images/speaker-dashu.jpg" alt="吳大樹 頭像"></div></a>
+      <button class="speaker-card" onclick="openSpeakerBio(this)"
+        data-name="吳大樹（大樹教練）" data-title="AI 導入教練｜海餅乾俱樂部創辦人" data-topic="主題：出一張嘴叫AI做事現場示範"
+        data-bio="培訓教練・團隊組建・演講訓練・AI 導入教練。投入教育超過 25 年，演講超過 6,000 場，足跡遍及台灣、新加坡、馬來西亞及中國大陸。海餅乾俱樂部創辦人，BNI 大台南南區執行董事，AI 百人導師計畫召集人。本場主題：出一張嘴叫AI做事現場示範——現場直接示範零程式基礎也能上手的 AI 使用方法。">
+        <div class="speaker-photo"><img src="images/speaker-dashu.jpg" alt="吳大樹 頭像"></div>
         <div>
           <div class="speaker-name">吳大樹</div>
           <div class="speaker-title">AI 導入教練｜海餅乾俱樂部創辦人</div>
           <div class="speaker-topic">主題：出一張嘴叫AI做事現場示範</div>
-          <div class="speaker-actions"><a href="#bio-dashu" class="btn-mini">查看講師完整資訊</a></div>
+          <span class="speaker-hint">查看完整簡介</span>
         </div>
-      </div>
-    </div>
-
-    <div class="cards" style="grid-template-columns:1fr;margin-top:30px;gap:20px">
-      <div class="card bio-card" id="bio-jige">
-        <div class="bio-tag">講師簡介</div>
-        <h3>季哥 Eric Chi｜學經歷</h3>
-        <p>身為數學系、數學所出身的統計博士，深知風險管理與精算邏輯在保險領域中的關鍵角色。現任凱基人壽保險與產險業務主任，結合嚴謹的學術訓練與實務經驗，致力於為客戶提供全方位、量身打造的保障規劃，從基本壽險、醫療險、重大疾病險，到車險、旅平險、住宅火險，兼顧資產配置與投資型保險的風險評估。始終堅持「專業」與「親切」並重的服務態度。本場主題：透過AI看世界／中樂透與買保險——用數學與AI的角度，重新看懂機率、風險與保障。</p>
-      </div>
-      <div class="card bio-card" id="bio-hong">
-        <div class="bio-tag">講師簡介</div>
-        <h3>洪詠清｜學經歷</h3>
-        <p>嘿畫面工作室負責人。原先是影像工作者，兼具美感與從0開始策劃的行業經驗，經歷10年後深知攝影的定位勢必隨趨勢調整，於是土法煉鋼、一問一答的方式研究AI創作，從文字類型的創作到影像的順暢製作，甚至開始製作各種便捷省時的App。目前已製作出8款可公開使用的App、5個可互動的說明式網頁操作，以及數十部AI小短片。本場主題：客製APP動手作（基礎篇）——零基礎也能跟著動手做出屬於自己的App。</p>
-      </div>
-      <div class="card bio-card" id="bio-lin">
-        <div class="bio-tag">講師簡介</div>
-        <h3>林韋銘｜學經歷</h3>
-        <p>鵬遊執行長，專注於 Notion 系統架構設計、LINE@ 商業應用整合與 N8N 自動化工作流程開發的數位旅人。以第三者切入每個專案，深入理解客戶的業務邏輯與痛點，透過低代碼（Low-Code）工具組合，為企業打造兼具彈性、可擴展性與實用性的數位化解決方案。同時身兼二寶爸，工作與家庭都要兼顧，因此很常研究數位工具管理生活，也樂於分享研究心得。本場主題：AI世界的底層邏輯談Notion入門——帶你看懂如何用Notion打造AI時代的個人與工作系統。</p>
-      </div>
-      <div class="card bio-card" id="bio-dashu">
-        <div class="bio-tag">講師簡介</div>
-        <h3>吳大樹（大樹教練）｜學經歷</h3>
-        <p>培訓教練・團隊組建・演講訓練・AI 導入教練。投入教育超過 25 年，演講超過 6,000 場，足跡遍及台灣、新加坡、馬來西亞及中國大陸。海餅乾俱樂部創辦人，BNI 大台南南區執行董事，AI 百人導師計畫召集人。本場主題：出一張嘴叫AI做事現場示範——現場直接示範零程式基礎也能上手的 AI 使用方法。</p>
-      </div>
+      </button>
     </div>
   </div>
 </section>
@@ -1010,6 +1000,24 @@ footer{padding:0 0 84px;color:#8a7a6a;text-align:center;font-size:13px}
   <a href="https://line.me/R/ti/p/@qaw8118h" target="_blank" rel="noopener noreferrer">加入 LINE</a>
 </div>
 
+<!-- ===== Speaker Bio Modal ===== -->
+<div class="modal speaker-bio-modal" id="speakerBioModal">
+  <div class="modal-bg" onclick="closeSpeakerBio()"></div>
+  <div class="modal-box">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="speakerBioName"></div>
+        <div class="modal-sub" id="speakerBioTitle"></div>
+      </div>
+      <button class="modal-close" onclick="closeSpeakerBio()" aria-label="關閉">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="speaker-topic" id="speakerBioTopic" style="margin-bottom:16px"></div>
+      <p id="speakerBioText"></p>
+    </div>
+  </div>
+</div>
+
 <!-- ===== Type Select Modal ===== -->
 <div class="modal" id="typeModal">
   <div class="modal-bg" onclick="hideTypeModal()"></div>
@@ -1245,6 +1253,18 @@ function toggleFaq(btn){
   btn.parentElement.classList.toggle('open');
 }
 
+// ===== 講師簡介彈窗（比照 mentor100 點擊卡片直接彈出完整簡介） =====
+function openSpeakerBio(btn){
+  document.getElementById('speakerBioName').textContent = btn.dataset.name;
+  document.getElementById('speakerBioTitle').textContent = btn.dataset.title;
+  document.getElementById('speakerBioTopic').textContent = btn.dataset.topic;
+  document.getElementById('speakerBioText').textContent = btn.dataset.bio;
+  document.getElementById('speakerBioModal').classList.add('show');
+}
+function closeSpeakerBio(){
+  document.getElementById('speakerBioModal').classList.remove('show');
+}
+
 // ===== 精彩花絮輪播（比照大樹小講carousel模式，12張，自動播放+手動切換） =====
 const CAROUSEL_TOTAL = 24;
 let carouselIndex = 0;
@@ -1295,9 +1315,11 @@ document.addEventListener('keydown', (e) => {
     const sm = document.getElementById('successModal');
     const rm = document.getElementById('registerModal');
     const tm = document.getElementById('typeModal');
+    const bm = document.getElementById('speakerBioModal');
     if(sm.classList.contains('show')) hideSuccessModal();
     else if(rm.classList.contains('show')) hideRegisterModal();
     else if(tm.classList.contains('show')) hideTypeModal();
+    else if(bm.classList.contains('show')) closeSpeakerBio();
   }
 });
 
