@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>AI微型論壇 嘉義場｜8月28日</title>
-<meta name="description" content="AI微型論壇－嘉義場。2026年8月28日（五）14:00–17:00，再耕園404演講廳（嘉義市西區玉康路160號）。從最落地的AI應用開始，效率直接翻倍。報名費100元，現場攤位可全額折抵消費。" />
+<title>AI微論壇 嘉義場｜8月28日</title>
+<meta name="description" content="AI微論壇－嘉義場。2026年8月28日（五）14:00–17:00，再耕園404演講廳（嘉義市西區玉康路160號）。從最落地的AI應用開始，效率直接翻倍。報名費100元，現場攤位可全額折抵消費。" />
+
+<!-- 社群分享預覽（Open Graph / Twitter Card）
+     2026-08-05 補上：此頁先前完全沒有 og: 標籤，LINE／FB 分享時只能退而求其次
+     去猜 <title>，且會把猜到的結果快取住。教練 8/5 實測貼到 LINE 仍顯示「台南場」
+     即為此故。補上後預覽的標題／描述／圖片由我們指定，不再交給平台猜。
+     ⚠️ og:image 必須是完整絕對網址，LINE/FB 不吃相對路徑。 -->
+<link rel="canonical" href="https://ai-talk-tw.netlify.app/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="AI微論壇" />
+<meta property="og:locale" content="zh_TW" />
+<meta property="og:url" content="https://ai-talk-tw.netlify.app/" />
+<meta property="og:title" content="AI微論壇 嘉義場｜8月28日（五）再耕園404演講廳" />
+<meta property="og:description" content="2026/8/28（五）14:00–17:00，嘉義市再耕園404演講廳。從最落地的AI應用開始，效率直接翻倍。報名費100元，可全額折抵現場攤位消費。" />
+<meta property="og:image" content="https://ai-talk-tw.netlify.app/images/carousel/photo-24.jpg" />
+<meta property="og:image:secure_url" content="https://ai-talk-tw.netlify.app/images/carousel/photo-24.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="900" />
+<meta property="og:image:height" content="506" />
+<meta property="og:image:alt" content="AI微論壇現場座無虛席，與會者專注聆聽" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="AI微論壇 嘉義場｜8月28日（五）再耕園404演講廳" />
+<meta name="twitter:description" content="2026/8/28（五）14:00–17:00，嘉義市再耕園404演講廳。從最落地的AI應用開始，效率直接翻倍。報名費100元，可全額折抵現場攤位消費。" />
+<meta name="twitter:image" content="https://ai-talk-tw.netlify.app/images/carousel/photo-24.jpg" />
 <style>
 :root{
 --bg:#f6f1e8;
@@ -144,6 +167,9 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 .speaker-name{font-size:22px;font-weight:900;color:var(--text)}
 .speaker-title{margin-top:2px;font-size:14px;font-weight:800;color:var(--accent)}
 .speaker-topic{margin-top:10px;padding:10px 14px;border-radius:14px;background:#f8f1e7;color:var(--muted);font-weight:800;font-size:14px;line-height:1.6}
+.speaker-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.speaker-link-btn{display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;border:1px solid var(--gold);background:rgba(255,255,255,.72);font-weight:800;font-size:13px;color:#6b5134;text-decoration:none}
+.speaker-link-btn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 .speaker-actions{margin-top:12px}
 .btn-mini{display:inline-flex;padding:8px 16px;border-radius:999px;background:var(--accent);color:#fff;font-weight:900;font-size:13px}
 .bio-card{scroll-margin-top:100px;padding:26px}
@@ -284,7 +310,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.2 7.3 11.8.2.2.5.2.7 0C12.7 21.2 20 15.4 20 10c0-4.4-3.6-8-8-8z" fill="currentColor"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
         嘉義場<span style="margin-left:8px">AI Talk</span>
       </div>
-      <h1 class="headline">AI微型論壇</h1>
+      <h1 class="headline">AI微論壇</h1>
       <div class="subheadline">從最落地的AI應用開始，效率直接翻倍</div>
       <p class="lead">這不是一場只聽概念的講座，而是一場讓你 <strong>真的開始使用 AI</strong> 的實戰活動。13:30 即可入場，現場設有小型 AI 體驗活動，零基礎也能跟上。</p>
 
@@ -380,7 +406,8 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
     <div class="speaker-grid">
       <button class="speaker-card" onclick="openSpeakerBio(this)"
         data-name="季哥 Eric Chi" data-title="凱基人壽／保險業務" data-topic="主題：透過AI看世界／中樂透與買保險"
-        data-bio="身為數學系、數學所出身的統計博士，深知風險管理與精算邏輯在保險領域中的關鍵角色。現任凱基人壽保險與產險業務主任，結合嚴謹的學術訓練與實務經驗，致力於為客戶提供全方位、量身打造的保障規劃，從基本壽險、醫療險、重大疾病險，到車險、旅平險、住宅火險，兼顧資產配置與投資型保險的風險評估。始終堅持「專業」與「親切」並重的服務態度。本場主題：透過AI看世界／中樂透與買保險——用數學與AI的角度，重新看懂機率、風險與保障。">
+        data-bio="身為數學系、數學所出身的統計博士，深知風險管理與精算邏輯在保險領域中的關鍵角色。現任凱基人壽保險與產險業務主任，結合嚴謹的學術訓練與實務經驗，致力於為客戶提供全方位、量身打造的保障規劃，從基本壽險、醫療險、重大疾病險，到車險、旅平險、住宅火險，兼顧資產配置與投資型保險的風險評估。始終堅持「專業」與「親切」並重的服務態度。本場主題：透過AI看世界／中樂透與買保險——用數學與AI的角度，重新看懂機率、風險與保障。"
+        data-links='[{"label":"TikTok","url":"https://www.tiktok.com/@chihtsungchi?_r=1&_t=ZS-98XSEao9PK0"},{"label":"Threads","url":"https://www.threads.com/@insurance_let_you_know?igshid=NTc4MTIwNjQ2YQ=="}]'>
         <div class="speaker-photo"><img src="images/speaker-jige.jpg" alt="季哥 Eric Chi 頭像"></div>
         <div>
           <div class="speaker-name">季哥 Eric Chi</div>
@@ -392,7 +419,8 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 
       <button class="speaker-card" onclick="openSpeakerBio(this)"
         data-name="洪詠清" data-title="負責人｜嘿畫面工作室" data-topic="主題：客製APP動手作（基礎篇）"
-        data-bio="嘿畫面工作室負責人。原先是影像工作者，兼具美感與從0開始策劃的行業經驗，經歷10年後深知攝影的定位勢必隨趨勢調整，於是土法煉鋼、一問一答的方式研究AI創作，從文字類型的創作到影像的順暢製作，甚至開始製作各種便捷省時的App。目前已製作出8款可公開使用的App、5個可互動的說明式網頁操作，以及數十部AI小短片。本場主題：客製APP動手作（基礎篇）——零基礎也能跟著動手做出屬於自己的App。">
+        data-bio="嘿畫面工作室負責人。原先是影像工作者，兼具美感與從0開始策劃的行業經驗，經歷10年後深知攝影的定位勢必隨趨勢調整，於是土法煉鋼、一問一答的方式研究AI創作，從文字類型的創作到影像的順暢製作，甚至開始製作各種便捷省時的App。目前已製作出8款可公開使用的App、5個可互動的說明式網頁操作，以及數十部AI小短片。本場主題：客製APP動手作（基礎篇）——零基礎也能跟著動手做出屬於自己的App。"
+        data-links='[{"label":"花對錢 app","url":"https://money-partner.lovable.app"},{"label":"欸我跟你說-日談訓練成溝通大師","url":"https://dailytalkingmaster.lovable.app"},{"label":"IG","url":"https://www.instagram.com/hongblake?igsh=NjB3dmI4OHBjNXNv"},{"label":"數位經濟-說明互動式網頁","url":"https://digital-economy-routing-tw.blake-imange.chatgpt.site/"},{"label":"時間遙控器-有獎懲機制的待辦提醒器","url":"https://plan-alarm.lovable.app"},{"label":"漫談圈-聊聊牌卡說明官網","url":"https://talking-circle.vercel.app/"}]'>
         <div class="speaker-photo"><img src="images/speaker-hong.jpg" alt="洪詠清 頭像"></div>
         <div>
           <div class="speaker-name">洪詠清</div>
@@ -404,7 +432,8 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 
       <button class="speaker-card" onclick="openSpeakerBio(this)"
         data-name="林韋銘" data-title="鵬遊執行長｜n8n&Notion整合師" data-topic="主題：AI世界的底層邏輯談Notion入門"
-        data-bio="鵬遊執行長，專注於 Notion 系統架構設計、LINE@ 商業應用整合與 N8N 自動化工作流程開發的數位旅人。以第三者切入每個專案，深入理解客戶的業務邏輯與痛點，透過低代碼（Low-Code）工具組合，為企業打造兼具彈性、可擴展性與實用性的數位化解決方案。同時身兼二寶爸，工作與家庭都要兼顧，因此很常研究數位工具管理生活，也樂於分享研究心得。本場主題：AI世界的底層邏輯談Notion入門——帶你看懂如何用Notion打造AI時代的個人與工作系統。">
+        data-bio="鵬遊執行長，專注於 Notion 系統架構設計、LINE@ 商業應用整合與 N8N 自動化工作流程開發的數位旅人。以第三者切入每個專案，深入理解客戶的業務邏輯與痛點，透過低代碼（Low-Code）工具組合，為企業打造兼具彈性、可擴展性與實用性的數位化解決方案。同時身兼二寶爸，工作與家庭都要兼顧，因此很常研究數位工具管理生活，也樂於分享研究心得。本場主題：AI世界的底層邏輯談Notion入門——帶你看懂如何用Notion打造AI時代的個人與工作系統。"
+        data-links='[{"label":"官網","url":"https://andesnice.github.io/temple-digital/"},{"label":"IG","url":"https://www.instagram.com/andesnice/"},{"label":"Threads","url":"https://www.threads.com/@andesnice?xmt=AQG0MYE9FMXXNiZAtBGIlW2IXVsSNc-fjTdIhucKqUCUdd8"},{"label":"部落格","url":"https://app.notion.com/p/andesnice/Notion-LINE-N8N-GAS-33d8db83bd938149a4d6fd845232f8ef?source=copy_link"}]'>
         <div class="speaker-photo"><img src="images/speaker-lin.jpg" alt="林韋銘 頭像"></div>
         <div>
           <div class="speaker-name">林韋銘</div>
@@ -416,7 +445,8 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 
       <button class="speaker-card" onclick="openSpeakerBio(this)"
         data-name="吳大樹（大樹教練）" data-title="AI 導入教練｜海餅乾俱樂部創辦人" data-topic="主題：出一張嘴叫AI做事現場示範"
-        data-bio="培訓教練・團隊組建・演講訓練・AI 導入教練。投入教育超過 25 年，演講超過 6,000 場，足跡遍及台灣、新加坡、馬來西亞及中國大陸。海餅乾俱樂部創辦人，BNI 大台南南區執行董事，AI 百人導師計畫召集人。本場主題：出一張嘴叫AI做事現場示範——現場直接示範零程式基礎也能上手的 AI 使用方法。">
+        data-bio="培訓教練・團隊組建・演講訓練・AI 導入教練。投入教育超過 25 年，演講超過 6,000 場，足跡遍及台灣、新加坡、馬來西亞及中國大陸。海餅乾俱樂部創辦人，BNI 大台南南區執行董事，AI 百人導師計畫召集人。本場主題：出一張嘴叫AI做事現場示範——現場直接示範零程式基礎也能上手的 AI 使用方法。"
+        data-links='[{"label":"官網","url":"https://www.bymyway.com/"},{"label":"FB","url":"https://www.facebook.com/seabiscuit2007"},{"label":"AI 學習歷程","url":"https://www.bymyway.com/ai/"},{"label":"大樹小講","url":"https://bigtree-tw.netlify.app/"},{"label":"GJW","url":"https://www.ganjingworld.com/@bymyway"},{"label":"LINE","url":"https://lin.ee/xQcrhfZ"},{"label":"Podcast","url":"https://host.soundon.fm/app/podcasts"}]'>
         <div class="speaker-photo"><img src="images/speaker-dashu.jpg" alt="吳大樹 頭像"></div>
         <div>
           <div class="speaker-name">吳大樹</div>
@@ -518,7 +548,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
   <div class="container">
     <div class="eyebrow">歷屆回顧</div>
     <h2>台南場．完整版面封存</h2>
-    <p class="section-lead">AI微型論壇第一場，2026年7月29日在台南安平維悅酒店舉辦。以下完整保留當天的整頁設計與內容，作為這一場的永久紀念。</p>
+    <p class="section-lead">AI微論壇第一場，2026年7月29日在台南安平維悅酒店舉辦。以下完整保留當天的整頁設計與內容，作為這一場的永久紀念。</p>
   </div>
 </section>
 
@@ -530,7 +560,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C7.6 2 4 5.6 4 10c0 5.4 6.6 11.2 7.3 11.8.2.2.5.2.7 0C12.7 21.2 20 15.4 20 10c0-4.4-3.6-8-8-8z" fill="currentColor"/><circle cx="12" cy="10" r="3" fill="#fff"/></svg>
         台南場<span style="margin-left:8px">AI Talk</span>
       </div>
-      <h1 class="headline">AI微型論壇．台南場</h1>
+      <h1 class="headline">AI微論壇．台南場</h1>
       <div class="subheadline">圓滿落幕，感謝每一位到場的朋友</div>
       <p class="lead">這場活動已經結束，這裡保留下當天的完整內容與現場花絮，作為這一場的紀念。</p>
 
@@ -696,7 +726,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
     <h2>7/29 台南場．現場實況回顧</h2>
     <p class="section-lead">感謝每一位到場的朋友，滿滿的人潮跟熱烈互動，都留在這些照片裡。</p>
     <div class="carousel-wrap">
-      <img id="carouselImg" src="images/carousel/photo-01.jpg" alt="AI微型論壇台南場現場花絮">
+      <img id="carouselImg" src="images/carousel/photo-01.jpg" alt="AI微論壇台南場現場花絮">
       <button class="carousel-btn carousel-prev" onclick="carouselPrev()" aria-label="上一張">&#10094;</button>
       <button class="carousel-btn carousel-next" onclick="carouselNext()" aria-label="下一張">&#10095;</button>
       <div class="carousel-counter" id="carouselCounter">1 / 24</div>
@@ -993,7 +1023,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 </section>
 
 <footer>
-  AI Talk｜AI微型論壇 嘉義場．活動頁面
+  AI Talk｜AI微論壇 嘉義場．活動頁面
 </footer>
 
 <div class="sticky">
@@ -1015,6 +1045,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
     <div class="modal-body">
       <div class="speaker-topic" id="speakerBioTopic" style="margin-bottom:16px"></div>
       <p id="speakerBioText"></p>
+      <div class="speaker-links" id="speakerBioLinks"></div>
     </div>
   </div>
 </div>
@@ -1056,7 +1087,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
     <div class="modal-head">
       <div>
         <div class="modal-title" id="registerModalTitle">報名 AI 微型論壇</div>
-        <div class="modal-sub">AI微型論壇－嘉義場｜8/28（五）14:00–17:00｜再耕園404演講廳</div>
+        <div class="modal-sub">AI微論壇－嘉義場｜8/28（五）14:00–17:00｜再耕園404演講廳</div>
       </div>
       <button class="modal-close" onclick="hideRegisterModal()" aria-label="關閉">&times;</button>
     </div>
@@ -1138,7 +1169,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 
 // ===== 報名流程（完整比照 bigtree/old：表單送出→後端存檔→成功頁→使用者主動點擊才開LINE） =====
 const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
-const SESSION_NAME = 'AI微型論壇－嘉義場（8/28）';
+const SESSION_NAME = 'AI微論壇－嘉義場（8/28）';
 
 // 三種報名身份對照：畫面顯示文字 + LINE通知/訊息開頭標籤
 const TYPE_LABELS = {
@@ -1209,10 +1240,10 @@ function submitRegistration(e){
 }
 
 function generateLineMessage(){
-  if(!lastRegistration) return '您好，我想報名【AI微型論壇－嘉義場】，請協助確認席次，謝謝！';
+  if(!lastRegistration) return '您好，我想報名【AI微論壇－嘉義場】，請協助確認席次，謝謝！';
   const r = lastRegistration;
   const info = TYPE_LABELS[r.type] || TYPE_LABELS['個人'];
-  return '【' + info.notice + '】\n您好，我想' + info.title + '【AI微型論壇－嘉義場】\n\n姓名：' + r.name + '\n電話：' + r.phone + '\nEmail：' + (r.email || '未填寫') + '\n公司/職稱：' + (r.company || '未填寫') + '\n公司統一編號：' + (r.taxId || '未填寫') + '\n\n請協助確認席次，謝謝！';
+  return '【' + info.notice + '】\n您好，我想' + info.title + '【AI微論壇－嘉義場】\n\n姓名：' + r.name + '\n電話：' + r.phone + '\nEmail：' + (r.email || '未填寫') + '\n公司/職稱：' + (r.company || '未填寫') + '\n公司統一編號：' + (r.taxId || '未填寫') + '\n\n請協助確認席次，謝謝！';
 }
 function copyLineMessage(){
   const msg = generateLineMessage();
@@ -1260,6 +1291,21 @@ function openSpeakerBio(btn){
   document.getElementById('speakerBioTitle').textContent = btn.dataset.title;
   document.getElementById('speakerBioTopic').textContent = btn.dataset.topic;
   document.getElementById('speakerBioText').textContent = btn.dataset.bio;
+  // 比照 AI 百人導師(mentor100)的做法：講師簡介下方附上 FB/IG/YouTube/官網等連結，
+  // 有興趣的人可以直接點進去看講師本人的作品或主頁（2026-08-05 教練指示新增）
+  const linksEl = document.getElementById('speakerBioLinks');
+  linksEl.innerHTML = '';
+  let links = [];
+  try { links = JSON.parse(btn.dataset.links || '[]'); } catch (e) { links = []; }
+  links.forEach(function(link){
+    const a = document.createElement('a');
+    a.href = link.url;
+    a.target = '_blank';
+    a.rel = 'noopener';
+    a.className = 'speaker-link-btn';
+    a.textContent = link.label;
+    linksEl.appendChild(a);
+  });
   document.getElementById('speakerBioModal').classList.add('show');
 }
 function closeSpeakerBio(){
@@ -1275,7 +1321,7 @@ function carouselRender(){
   if (!img) return;
   const n = String(carouselIndex + 1).padStart(2, '0');
   img.src = `images/carousel/photo-${n}.jpg`;
-  img.alt = `AI微型論壇過去場次現場花絮 ${carouselIndex + 1}`;
+  img.alt = `AI微論壇過去場次現場花絮 ${carouselIndex + 1}`;
   counter.textContent = `${carouselIndex + 1} / ${CAROUSEL_TOTAL}`;
 }
 let carouselTimer = null;
