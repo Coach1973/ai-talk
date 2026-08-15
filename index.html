@@ -1170,6 +1170,10 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 // ===== 報名流程（完整比照 bigtree/old：表單送出→後端存檔→成功頁→使用者主動點擊才開LINE） =====
 const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
 const SESSION_NAME = 'AI微論壇－嘉義場（8/28）';
+// 雙寫並存期（2026-08-15新增，比照大樹小講）：多打一路寫進event-signup的event.db，
+// 對應event.db裡的event slug=bigtree-0828。任何失敗都不能影響訪客報名，fire-and-forget。
+const BYMYWAY_API = 'https://event.bymyway.com/api/register';
+const BYMYWAY_SLUG = 'bigtree-0828';
 
 // 三種報名身份對照：畫面顯示文字 + LINE通知/訊息開頭標籤
 const TYPE_LABELS = {
@@ -1224,6 +1228,11 @@ function submitRegistration(e){
     headers: { 'Content-Type': 'application/json' },
     // session 欄位加上【XX通知】前綴：若後端把session原樣顯示在通知裡，這裡就能反映身份差異
     body: JSON.stringify({ session: '【' + info.notice + '】' + SESSION_NAME, name, company, taxId, phone, email, type: currentRegType })
+  }).catch(()=>{});
+  fetch(BYMYWAY_API, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ slug: BYMYWAY_SLUG, name, phone, company, email })
   }).catch(()=>{});
   const form = e.target;
   const submitBtn = form.querySelector('button[type="submit"]');
