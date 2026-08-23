@@ -1200,8 +1200,11 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 
 <script>
 // ===== 已報名人數：每天+3人，上限100席（教練內定節奏，非即時串接） =====
+// 2026-08-24教練調整：這兩天才開始積極推廣，重設基準為53人（8/24當天），
+// 之後8/25~8/28每天仍+3人，非即時串接真實資料（真實查詢見event.db的bigtree-0828）
 (function(){
-  const startDate = new Date('2026-08-03T00:00:00+08:00').getTime();
+  const startDate = new Date('2026-08-24T00:00:00+08:00').getTime();
+  const baseCount = 53;
   const perDay = 3;
   const maxSeats = 100;
   function updateLiveCount(){
@@ -1209,7 +1212,7 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
     const remainingEl = document.getElementById('remaining-count');
     if(!liveCountEl) return;
     const daysPassed = Math.max(0, Math.floor((Date.now() - startDate) / (1000*60*60*24)));
-    const current = Math.min(maxSeats, daysPassed * perDay);
+    const current = Math.min(maxSeats, baseCount + daysPassed * perDay);
     liveCountEl.textContent = current;
     if(remainingEl) remainingEl.textContent = Math.max(0, maxSeats - current);
   }
