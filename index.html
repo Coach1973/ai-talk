@@ -1274,14 +1274,9 @@ function submitRegistration(e){
   const company = document.getElementById('regCompany').value.trim();
   const taxId = document.getElementById('regTaxId').value.trim();
   if(!name || !phone){ alert('請完整填寫姓名與聯絡電話'); return; }
-  const info = TYPE_LABELS[currentRegType] || TYPE_LABELS['個人'];
   lastRegistration = { name, phone, email, company, taxId, type: currentRegType };
-  fetch('https://sme-register-fn.netlify.app/.netlify/functions/register', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    // session 欄位加上【XX通知】前綴：若後端把session原樣顯示在通知裡，這裡就能反映身份差異
-    body: JSON.stringify({ session: '【' + info.notice + '】' + SESSION_NAME, name, company, taxId, phone, email, type: currentRegType })
-  }).catch(()=>{});
+  // 2026-08-24教練裁示：報名通知全面改走Telegram，舊的sme-register-fn（LINE轉發教練）已移除，
+  // BYMYWAY_API會同時寫入資料庫+發Telegram「活動報名即時通知」群組（教練+佩佩老師同見）。
   fetch(BYMYWAY_API, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
