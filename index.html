@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>AI微論壇 台南場｜9月22日</title>
-<meta name="description" content="AI微論壇－台南場。2026年9月22日（二）13:30開始，16:30結束，台南安平維悅酒店（台南市安平區慶平路539號）。從最落地的AI應用開始，效率直接翻倍。報名費200元，限量50席。" />
+<meta name="description" content="AI微論壇－台南場。2026年9月22日（二）13:30開始，16:30結束，台南安平維悅酒店（台南市安平區慶平路539號）。從最落地的AI應用開始，效率直接翻倍。報名費200元。" />
 
 <!-- 社群分享預覽（Open Graph / Twitter Card）
      2026-08-05 補上：此頁先前完全沒有 og: 標籤，LINE／FB 分享時只能退而求其次
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh_TW" />
 <meta property="og:url" content="https://event.bymyway.com/ai-talk/" />
 <meta property="og:title" content="AI微論壇 台南場｜9月22日（二）台南安平維悅酒店" />
-<meta property="og:description" content="2026/9/22（二）13:30開始，16:30結束，台南安平維悅酒店。從最落地的AI應用開始，效率直接翻倍。報名費200元，限量50席。" />
+<meta property="og:description" content="2026/9/22（二）13:30開始，16:30結束，台南安平維悅酒店。從最落地的AI應用開始，效率直接翻倍。報名費200元。" />
 <meta property="og:image" content="https://event.bymyway.com/ai-talk/images/speaker-dashu.jpg" />
 <meta property="og:image:secure_url" content="https://event.bymyway.com/ai-talk/images/speaker-dashu.jpg" />
 <meta property="og:image:type" content="image/jpeg" />
@@ -27,7 +27,7 @@
 <meta property="og:image:alt" content="大樹教練" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="AI微論壇 台南場｜9月22日（二）台南安平維悅酒店" />
-<meta name="twitter:description" content="2026/9/22（二）13:30開始，16:30結束，台南安平維悅酒店。從最落地的AI應用開始，效率直接翻倍。報名費200元，限量50席。" />
+<meta name="twitter:description" content="2026/9/22（二）13:30開始，16:30結束，台南安平維悅酒店。從最落地的AI應用開始，效率直接翻倍。報名費200元。" />
 <meta name="twitter:image" content="https://event.bymyway.com/ai-talk/images/speaker-dashu.jpg" />
 <style>
 :root{
@@ -317,9 +317,6 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
       <div class="subheadline">從最落地的AI應用開始，效率直接翻倍</div>
       <p class="lead">這不是一場只聽概念的講座，而是一場讓你 <strong>真的開始使用 AI</strong> 的實戰活動。13:30 開始，現場設有小型 AI 體驗活動，零基礎也能跟上。</p>
 
-      <div class="countdown">
-        <div class="count-live"><span class="count-dot"></span> 限量 50 席｜目前已報名 <span id="live-count">0</span> 人｜剩餘 <span id="remaining-count">50</span> 席</div>
-      </div>
       <div class="small-note">報名費 200 元，用於支付場地費；論壇入門禮數量有限，先到先得。</div>
 
       <div class="btn-row">
@@ -436,14 +433,13 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
       <div style="display:grid;gap:12px;margin-top:18px;color:var(--muted)">
         <div>✔ 200 元入場，看懂 2 個最落地的 AI 應用</div>
         <div>✔ 現場小型 AI 體驗活動，動手玩 AI</div>
-        <div>✔ 先卡位，避免 50 席快速額滿</div>
       </div>
     </div>
 
     <div class="price-box">
       <div class="eyebrow" style="letter-spacing:.12em">活動費用</div>
       <div class="price">200</div>
-      <div style="font-weight:900;color:#6b5134">限量50席，先報先卡位</div>
+      <div style="font-weight:900;color:#6b5134">先報先卡位</div>
       <div class="checklist">
         <div>✔ 報名費 200 元</div>
         <div>✔ 2 大主題實戰分享</div>
@@ -1463,27 +1459,6 @@ button.speaker-card{border:none;text-align:left;cursor:pointer;font-family:inher
 </div>
 
 <script>
-// ===== 已報名人數：每天+2人，上限50席（教練內定節奏，非即時串接） =====
-// 2026-08-31：8/28嘉義場換成9/22台南場，容量從100席降為50席（event.db bigtree-0922-day登記座位50人），
-// 基準重設為9/1上線當天0人起算，非即時串接真實資料（真實查詢見event.db的bigtree-0922-day）
-(function(){
-  const startDate = new Date('2026-09-01T00:00:00+08:00').getTime();
-  const baseCount = 0;
-  const perDay = 2;
-  const maxSeats = 50;
-  function updateLiveCount(){
-    const liveCountEl = document.getElementById('live-count');
-    const remainingEl = document.getElementById('remaining-count');
-    if(!liveCountEl) return;
-    const daysPassed = Math.max(0, Math.floor((Date.now() - startDate) / (1000*60*60*24)));
-    const current = Math.min(maxSeats, baseCount + daysPassed * perDay);
-    liveCountEl.textContent = current;
-    if(remainingEl) remainingEl.textContent = Math.max(0, maxSeats - current);
-  }
-  updateLiveCount();
-  setInterval(updateLiveCount, 60000);
-})();
-
 // ===== 報名流程（完整比照 bigtree/old：表單送出→後端存檔→成功頁→使用者主動點擊才開LINE） =====
 const LINE_REGISTRATION_URL = 'https://line.me/R/ti/p/@qaw8118h';
 const SESSION_NAME = 'AI微論壇－台南場（9/22）';
